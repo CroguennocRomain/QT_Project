@@ -22,6 +22,8 @@ public:
     void drawBackground(QPainter* painter, const QRectF& rect);
     virtual ~MyScene();
 
+public slots:
+    void update();
 };
 
 
