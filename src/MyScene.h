@@ -2,7 +2,7 @@
 #define CPP_QT_TPMINIPROJET_MYSCENE_H
 
 #include <QGraphicsScene>
-
+#include "Entity.h"
 
 class MyScene : public QGraphicsScene {
     Q_OBJECT

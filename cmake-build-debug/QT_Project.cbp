@@ -119,6 +119,18 @@
 		<Unit filename="/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src/Entity.h">
 			<Option target="QT_Project"/>
 		</Unit>
+		<Unit filename="/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src/MainWindow.cpp">
+			<Option target="QT_Project"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src/MainWindow.h">
+			<Option target="QT_Project"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src/MyScene.cpp">
+			<Option target="QT_Project"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src/MyScene.h">
+			<Option target="QT_Project"/>
+		</Unit>
 		<Unit filename="/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src/main.cpp">
 			<Option target="QT_Project"/>
 		</Unit>

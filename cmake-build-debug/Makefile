@@ -209,6 +209,60 @@ src/Entity.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/QT_Project.dir/build.make CMakeFiles/QT_Project.dir/src/Entity.cpp.s
 .PHONY : src/Entity.cpp.s
 
+src/MainWindow.o: src/MainWindow.cpp.o
+
+.PHONY : src/MainWindow.o
+
+# target to build an object file
+src/MainWindow.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QT_Project.dir/build.make CMakeFiles/QT_Project.dir/src/MainWindow.cpp.o
+.PHONY : src/MainWindow.cpp.o
+
+src/MainWindow.i: src/MainWindow.cpp.i
+
+.PHONY : src/MainWindow.i
+
+# target to preprocess a source file
+src/MainWindow.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QT_Project.dir/build.make CMakeFiles/QT_Project.dir/src/MainWindow.cpp.i
+.PHONY : src/MainWindow.cpp.i
+
+src/MainWindow.s: src/MainWindow.cpp.s
+
+.PHONY : src/MainWindow.s
+
+# target to generate assembly for a file
+src/MainWindow.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QT_Project.dir/build.make CMakeFiles/QT_Project.dir/src/MainWindow.cpp.s
+.PHONY : src/MainWindow.cpp.s
+
+src/MyScene.o: src/MyScene.cpp.o
+
+.PHONY : src/MyScene.o
+
+# target to build an object file
+src/MyScene.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QT_Project.dir/build.make CMakeFiles/QT_Project.dir/src/MyScene.cpp.o
+.PHONY : src/MyScene.cpp.o
+
+src/MyScene.i: src/MyScene.cpp.i
+
+.PHONY : src/MyScene.i
+
+# target to preprocess a source file
+src/MyScene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QT_Project.dir/build.make CMakeFiles/QT_Project.dir/src/MyScene.cpp.i
+.PHONY : src/MyScene.cpp.i
+
+src/MyScene.s: src/MyScene.cpp.s
+
+.PHONY : src/MyScene.s
+
+# target to generate assembly for a file
+src/MyScene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QT_Project.dir/build.make CMakeFiles/QT_Project.dir/src/MyScene.cpp.s
+.PHONY : src/MyScene.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -252,6 +306,12 @@ help:
 	@echo "... src/Entity.o"
 	@echo "... src/Entity.i"
 	@echo "... src/Entity.s"
+	@echo "... src/MainWindow.o"
+	@echo "... src/MainWindow.i"
+	@echo "... src/MainWindow.s"
+	@echo "... src/MyScene.o"
+	@echo "... src/MyScene.i"
+	@echo "... src/MyScene.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
