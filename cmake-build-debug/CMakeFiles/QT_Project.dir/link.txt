@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/QT_Project.dir/main.cpp.o -o QT_Project 
