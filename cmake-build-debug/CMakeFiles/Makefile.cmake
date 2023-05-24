@@ -118,8 +118,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-3.18/Modules/CheckCSourceCompiles.cmake"
   "/usr/share/cmake-3.18/Modules/CheckCXXCompilerFlag.cmake"
   "/usr/share/cmake-3.18/Modules/CheckCXXSourceCompiles.cmake"
-  "/usr/share/cmake-3.18/Modules/CheckForPthreads.c"
-  "/usr/share/cmake-3.18/Modules/CheckIncludeFile.c.in"
   "/usr/share/cmake-3.18/Modules/CheckIncludeFile.cmake"
   "/usr/share/cmake-3.18/Modules/CheckLibraryExists.cmake"
   "/usr/share/cmake-3.18/Modules/Compiler/CMakeCommonCompilerMacros.cmake"

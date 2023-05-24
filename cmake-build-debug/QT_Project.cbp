@@ -113,6 +113,12 @@
 		<Unit filename="/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/QT_Project_autogen/mocs_compilation.cpp">
 			<Option target="QT_Project"/>
 		</Unit>
+		<Unit filename="/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src/Entity.cpp">
+			<Option target="QT_Project"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src/Entity.h">
+			<Option target="QT_Project"/>
+		</Unit>
 		<Unit filename="/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src/main.cpp">
 			<Option target="QT_Project"/>
 		</Unit>

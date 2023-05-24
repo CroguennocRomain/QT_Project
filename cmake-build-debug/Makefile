@@ -182,6 +182,33 @@ QT_Project_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/QT_Project.dir/build.make CMakeFiles/QT_Project.dir/QT_Project_autogen/mocs_compilation.cpp.s
 .PHONY : QT_Project_autogen/mocs_compilation.cpp.s
 
+src/Entity.o: src/Entity.cpp.o
+
+.PHONY : src/Entity.o
+
+# target to build an object file
+src/Entity.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QT_Project.dir/build.make CMakeFiles/QT_Project.dir/src/Entity.cpp.o
+.PHONY : src/Entity.cpp.o
+
+src/Entity.i: src/Entity.cpp.i
+
+.PHONY : src/Entity.i
+
+# target to preprocess a source file
+src/Entity.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QT_Project.dir/build.make CMakeFiles/QT_Project.dir/src/Entity.cpp.i
+.PHONY : src/Entity.cpp.i
+
+src/Entity.s: src/Entity.cpp.s
+
+.PHONY : src/Entity.s
+
+# target to generate assembly for a file
+src/Entity.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QT_Project.dir/build.make CMakeFiles/QT_Project.dir/src/Entity.cpp.s
+.PHONY : src/Entity.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -222,6 +249,9 @@ help:
 	@echo "... QT_Project_autogen/mocs_compilation.o"
 	@echo "... QT_Project_autogen/mocs_compilation.i"
 	@echo "... QT_Project_autogen/mocs_compilation.s"
+	@echo "... src/Entity.o"
+	@echo "... src/Entity.i"
+	@echo "... src/Entity.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
