@@ -142,32 +142,72 @@ QT_Project/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/QT_Project.dir/build.make CMakeFiles/QT_Project.dir/build
 .PHONY : QT_Project/fast
 
-main.o: main.cpp.o
+#=============================================================================
+# Target rules for targets named QT_Project_autogen
 
-.PHONY : main.o
+# Build rule for target.
+QT_Project_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 QT_Project_autogen
+.PHONY : QT_Project_autogen
+
+# fast build rule for target.
+QT_Project_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QT_Project_autogen.dir/build.make CMakeFiles/QT_Project_autogen.dir/build
+.PHONY : QT_Project_autogen/fast
+
+QT_Project_autogen/mocs_compilation.o: QT_Project_autogen/mocs_compilation.cpp.o
+
+.PHONY : QT_Project_autogen/mocs_compilation.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/QT_Project.dir/build.make CMakeFiles/QT_Project.dir/main.cpp.o
-.PHONY : main.cpp.o
+QT_Project_autogen/mocs_compilation.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QT_Project.dir/build.make CMakeFiles/QT_Project.dir/QT_Project_autogen/mocs_compilation.cpp.o
+.PHONY : QT_Project_autogen/mocs_compilation.cpp.o
 
-main.i: main.cpp.i
+QT_Project_autogen/mocs_compilation.i: QT_Project_autogen/mocs_compilation.cpp.i
 
-.PHONY : main.i
+.PHONY : QT_Project_autogen/mocs_compilation.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/QT_Project.dir/build.make CMakeFiles/QT_Project.dir/main.cpp.i
-.PHONY : main.cpp.i
+QT_Project_autogen/mocs_compilation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QT_Project.dir/build.make CMakeFiles/QT_Project.dir/QT_Project_autogen/mocs_compilation.cpp.i
+.PHONY : QT_Project_autogen/mocs_compilation.cpp.i
 
-main.s: main.cpp.s
+QT_Project_autogen/mocs_compilation.s: QT_Project_autogen/mocs_compilation.cpp.s
 
-.PHONY : main.s
+.PHONY : QT_Project_autogen/mocs_compilation.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/QT_Project.dir/build.make CMakeFiles/QT_Project.dir/main.cpp.s
-.PHONY : main.cpp.s
+QT_Project_autogen/mocs_compilation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QT_Project.dir/build.make CMakeFiles/QT_Project.dir/QT_Project_autogen/mocs_compilation.cpp.s
+.PHONY : QT_Project_autogen/mocs_compilation.cpp.s
+
+src/main.o: src/main.cpp.o
+
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QT_Project.dir/build.make CMakeFiles/QT_Project.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QT_Project.dir/build.make CMakeFiles/QT_Project.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QT_Project.dir/build.make CMakeFiles/QT_Project.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -177,10 +217,14 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... QT_Project_autogen"
 	@echo "... QT_Project"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... QT_Project_autogen/mocs_compilation.o"
+	@echo "... QT_Project_autogen/mocs_compilation.i"
+	@echo "... QT_Project_autogen/mocs_compilation.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 

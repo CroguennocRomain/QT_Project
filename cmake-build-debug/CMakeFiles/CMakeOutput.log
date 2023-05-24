@@ -435,3 +435,53 @@ Parsed CXX implicit link information from above output:
   implicit fwks: []
 
 
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_ad084/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_ad084.dir/build.make CMakeFiles/cmTC_ad084.dir/build
+gmake[1]: Entering directory '/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ad084.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_ad084.dir/CheckIncludeFile.c.o -c /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_ad084
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ad084.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_ad084.dir/CheckIncludeFile.c.o -o cmTC_ad084 
+gmake[1]: Leaving directory '/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+
+Performing C++ SOURCE FILE Test HAVE_STDATOMIC succeeded with the following output:
+Change Dir: /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_86dd0/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_86dd0.dir/build.make CMakeFiles/cmTC_86dd0.dir/build
+gmake[1]: Entering directory '/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_86dd0.dir/src.cxx.o
+/usr/bin/c++   -DHAVE_STDATOMIC -std=gnu++17 -o CMakeFiles/cmTC_86dd0.dir/src.cxx.o -c /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_86dd0
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_86dd0.dir/link.txt --verbose=1
+/usr/bin/c++  -DHAVE_STDATOMIC CMakeFiles/cmTC_86dd0.dir/src.cxx.o -o cmTC_86dd0 
+gmake[1]: Leaving directory '/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <atomic>
+#include <cstdint>
+
+int main(int, char **)
+{
+    volatile std::atomic<char>    size_1;
+    volatile std::atomic<short>   size_2;
+    volatile std::atomic<int>     size_4;
+    volatile std::atomic<int64_t> size_8;
+
+    ++size_1;
+    ++size_2;
+    ++size_4;
+    ++size_8;
+
+    (void)size_1.load(std::memory_order_relaxed);
+    (void)size_2.load(std::memory_order_relaxed);
+    (void)size_4.load(std::memory_order_relaxed);
+    (void)size_8.load(std::memory_order_relaxed);
+
+    return 0;
+}
