@@ -21,9 +21,11 @@ public:
     MyScene(QObject* parent = nullptr);
     void drawBackground(QPainter* painter, const QRectF& rect);
     virtual ~MyScene();
-
+    void keyPressEvent(QKeyEvent* event);
 public slots:
     void update();
+
+
 };
 
 

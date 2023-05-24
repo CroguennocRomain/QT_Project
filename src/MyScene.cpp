@@ -36,7 +36,23 @@ void MyScene::drawBackground(QPainter *painter, const QRectF &rect) {
 }
 
 void MyScene::update() {
+
     for(Entity* entity : this->entities) {
         entity->move();
     }
 }
+
+void MyScene::keyPressEvent(QKeyEvent* event) {
+    /* Faire pause avec possibilité de reprendre */
+    if (event->key() == Qt::Key_P) {
+
+        if (this->timer->isActive()) {
+            this->timer->stop();
+        }
+
+        else {
+            this->timer->start();
+        }
+    }
+}
+

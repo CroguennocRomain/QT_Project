@@ -1,6 +1,7 @@
 #ifndef QT_PROJECT_ENTITY_H
 #define QT_PROJECT_ENTITY_H
 
+#include <QKeyEvent>
 #include <QPixmap>
 #include <QGraphicsPixmapItem>
 #include <QGraphicsScene>
@@ -14,7 +15,7 @@ public:
 
     /* Constructeur */
     Entity(QString imageFileName) : QGraphicsPixmapItem(QPixmap(imageFileName)) {
-        this->speed = 1;
+        this->speed = 10;
     }
 
     /* Getters & Setters */
@@ -23,6 +24,7 @@ public:
 
     /* Méthodes */
     void move();
+    void keyPressEvent(QKeyEvent* event);
 };
 
 
