@@ -2,22 +2,18 @@
 
 MyScene::MyScene(QObject* parent) : QGraphicsScene(parent) {
 
-    this->background.load("emoji_caca.png");
-    QGraphicsRectItem* qgri = new QGraphicsRectItem(10, 100, 300, 200);
-    this->addItem(qgri);
-
-    QGraphicsTextItem* qgti = new QGraphicsTextItem("CIR2 Nantes");
-    this->addItem(qgti);
-
-    // créer un objet de type QGraphicsPixmapItem
-    QGraphicsPixmapItem* qgpi = new QGraphicsPixmapItem(QPixmap("img/emoji_caca.png"));
-    // ajouter l'objet à la scène
-    this->addItem(qgpi);
-
-
+    // On charge l'image de fond
+    this->background.load("../img/espace.jpg");
+    this->setSceneRect(0, 0, background.width(), background.height());
 
 }
 
 MyScene::~MyScene() {
 
+}
+
+void MyScene::drawBackground(QPainter *painter, const QRectF &rect) {
+    // Fonction du TP4 qui permet de dessiner l'image de fond
+    Q_UNUSED(rect);
+    painter->drawPixmap(QRectF(0,0,background.width(), background.height()), background, sceneRect());
 }

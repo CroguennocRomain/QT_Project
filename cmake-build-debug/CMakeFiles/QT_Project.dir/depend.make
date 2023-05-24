@@ -10,6 +10,7 @@ CMakeFiles/QT_Project.dir/QT_Project_autogen/mocs_compilation.cpp.o: ../src/MySc
 CMakeFiles/QT_Project.dir/QT_Project_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt6/QtCore/QList
 CMakeFiles/QT_Project.dir/QT_Project_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt6/QtCore/QObject
 CMakeFiles/QT_Project.dir/QT_Project_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt6/QtCore/QRect
+CMakeFiles/QT_Project.dir/QT_Project_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt6/QtCore/QRectF
 CMakeFiles/QT_Project.dir/QT_Project_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt6/QtCore/QSize
 CMakeFiles/QT_Project.dir/QT_Project_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt6/QtCore/QSizeF
 CMakeFiles/QT_Project.dir/QT_Project_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt6/QtCore/QTimer
@@ -295,6 +296,7 @@ CMakeFiles/QT_Project.dir/src/MainWindow.cpp.o: ../src/MyScene.h
 CMakeFiles/QT_Project.dir/src/MainWindow.cpp.o: /usr/include/x86_64-linux-gnu/qt6/QtCore/QList
 CMakeFiles/QT_Project.dir/src/MainWindow.cpp.o: /usr/include/x86_64-linux-gnu/qt6/QtCore/QObject
 CMakeFiles/QT_Project.dir/src/MainWindow.cpp.o: /usr/include/x86_64-linux-gnu/qt6/QtCore/QRect
+CMakeFiles/QT_Project.dir/src/MainWindow.cpp.o: /usr/include/x86_64-linux-gnu/qt6/QtCore/QRectF
 CMakeFiles/QT_Project.dir/src/MainWindow.cpp.o: /usr/include/x86_64-linux-gnu/qt6/QtCore/QSize
 CMakeFiles/QT_Project.dir/src/MainWindow.cpp.o: /usr/include/x86_64-linux-gnu/qt6/QtCore/QSizeF
 CMakeFiles/QT_Project.dir/src/MainWindow.cpp.o: /usr/include/x86_64-linux-gnu/qt6/QtCore/QTimer
@@ -459,6 +461,7 @@ CMakeFiles/QT_Project.dir/src/MainWindow.cpp.o: /usr/include/x86_64-linux-gnu/qt
 CMakeFiles/QT_Project.dir/src/MyScene.cpp.o: ../src/Entity.h
 CMakeFiles/QT_Project.dir/src/MyScene.cpp.o: ../src/MyScene.cpp
 CMakeFiles/QT_Project.dir/src/MyScene.cpp.o: ../src/MyScene.h
+CMakeFiles/QT_Project.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt6/QtCore/QRectF
 CMakeFiles/QT_Project.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt6/QtCore/QTimer
 CMakeFiles/QT_Project.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt6/QtCore/qalgorithms.h
 CMakeFiles/QT_Project.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt6/QtCore/qanystringview.h
@@ -589,6 +592,7 @@ CMakeFiles/QT_Project.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/QT_Project.dir/src/main.cpp.o: /usr/include/x86_64-linux-gnu/qt6/QtCore/QList
 CMakeFiles/QT_Project.dir/src/main.cpp.o: /usr/include/x86_64-linux-gnu/qt6/QtCore/QObject
 CMakeFiles/QT_Project.dir/src/main.cpp.o: /usr/include/x86_64-linux-gnu/qt6/QtCore/QRect
+CMakeFiles/QT_Project.dir/src/main.cpp.o: /usr/include/x86_64-linux-gnu/qt6/QtCore/QRectF
 CMakeFiles/QT_Project.dir/src/main.cpp.o: /usr/include/x86_64-linux-gnu/qt6/QtCore/QSize
 CMakeFiles/QT_Project.dir/src/main.cpp.o: /usr/include/x86_64-linux-gnu/qt6/QtCore/QSizeF
 CMakeFiles/QT_Project.dir/src/main.cpp.o: /usr/include/x86_64-linux-gnu/qt6/QtCore/QTimer

@@ -7,6 +7,7 @@
 #include <QPixmap>
 #include <QTimer>
 #include <QPainter>
+#include <QRectF>
 
 class MyScene : public QGraphicsScene {
     Q_OBJECT
@@ -18,6 +19,7 @@ private :
 
 public:
     MyScene(QObject* parent = nullptr);
+    void drawBackground(QPainter* painter, const QRectF& rect);
     virtual ~MyScene();
 
 };
