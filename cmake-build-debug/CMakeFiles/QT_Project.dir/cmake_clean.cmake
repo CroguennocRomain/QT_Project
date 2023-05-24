@@ -4,6 +4,8 @@ file(REMOVE_RECURSE
   "QT_Project_autogen"
   "CMakeFiles/QT_Project.dir/QT_Project_autogen/mocs_compilation.cpp.o"
   "CMakeFiles/QT_Project.dir/src/Entity.cpp.o"
+  "CMakeFiles/QT_Project.dir/src/MainWindow.cpp.o"
+  "CMakeFiles/QT_Project.dir/src/MyScene.cpp.o"
   "CMakeFiles/QT_Project.dir/src/main.cpp.o"
   "QT_Project"
   "QT_Project.pdb"

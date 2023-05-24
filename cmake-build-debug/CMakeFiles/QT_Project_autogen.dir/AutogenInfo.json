@@ -193,6 +193,16 @@
 			"/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src/Entity.h",
 			"Mu",
 			"UVLADIE3JM/moc_Entity.cpp"
+		],
+		[
+			"/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src/MainWindow.h",
+			"Mu",
+			"UVLADIE3JM/moc_MainWindow.cpp"
+		],
+		[
+			"/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src/MyScene.h",
+			"Mu",
+			"UVLADIE3JM/moc_MyScene.cpp"
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -254,6 +264,14 @@
 	[
 		[
 			"/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src/Entity.cpp",
+			"Mu"
+		],
+		[
+			"/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src/MainWindow.cpp",
+			"Mu"
+		],
+		[
+			"/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src/MyScene.cpp",
 			"Mu"
 		],
 		[
