@@ -4,8 +4,17 @@
 #include <QGraphicsScene>
 #include "Entity.h"
 
+#include <QPixmap>
+#include <QTimer>
+#include <QPainter>
+
 class MyScene : public QGraphicsScene {
     Q_OBJECT
+
+private :
+    QPixmap background;
+    QTimer* timer;
+    QVector<Entity*> entities;
 
 public:
     MyScene(QObject* parent = nullptr);
