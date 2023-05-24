@@ -2,7 +2,7 @@
 
 MyScene::MyScene(QObject* parent) : QGraphicsScene(parent) {
 
-    this->background.load("emoji_caca.jpg");
+    this->background.load("emoji_caca.png");
     QGraphicsRectItem* qgri = new QGraphicsRectItem(10, 100, 300, 200);
     this->addItem(qgri);
 
