@@ -1,13 +1,12 @@
-#ifndef QT_PROJECT_CHARACTER_H
-#define QT_PROJECT_CHARACTER_H
-
+#ifndef QT_PROJECT_ENTITY_H
+#define QT_PROJECT_ENTITY_H
 
 #include <QKeyEvent>
 #include <QPixmap>
 #include <QGraphicsPixmapItem>
 #include <QGraphicsScene>
 
-class Character : public QGraphicsPixmapItem {
+class Entity : public QGraphicsPixmapItem {
 
 private :
     int speed;
@@ -25,8 +24,8 @@ public:
 
     /* Méthodes */
     void move();
-
+    void keyPressEvent(QKeyEvent* event);
 };
 
 
-#endif //QT_PROJECT_CHARACTER_H
+#endif //QT_PROJECT_ENTITY_H
