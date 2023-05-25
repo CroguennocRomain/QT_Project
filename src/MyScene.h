@@ -15,7 +15,7 @@ class MyScene : public QGraphicsScene {
 private :
     QPixmap background;
     QTimer* timer;
-    QVector<Entity*> entities;
+    QVector<Character*> characters;
 
 public:
     MyScene(QObject* parent = nullptr);
