@@ -2,7 +2,7 @@
 #define CPP_QT_TPMINIPROJET_MYSCENE_H
 
 #include <QGraphicsScene>
-#include "Entity.h"
+#include "Entity/Character.h"
 
 #include <QPixmap>
 #include <QTimer>
@@ -22,10 +22,10 @@ public:
     void drawBackground(QPainter* painter, const QRectF& rect);
     virtual ~MyScene();
     void keyPressEvent(QKeyEvent* event);
+
+
 public slots:
     void update();
-
-
 };
 
 
