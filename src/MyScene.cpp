@@ -28,6 +28,9 @@ MyScene::MyScene(QObject* parent) : QGraphicsScene(parent) {
 /* <-__---__---__---__---__--- Destructeur ---__---__---__---__--- -> */
 MyScene::~MyScene() {
 
+    delete this->player;
+    delete this->timer;
+
 }
 
 /* <-__---__---__---__---__--- Méthodes ---__---__---__---__--- -> */
@@ -62,8 +65,6 @@ void MyScene::update() {
     else if (this->isMovingRight) {
         this->player->moveRight();
     }
-
-
 
 }
 
