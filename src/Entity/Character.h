@@ -14,6 +14,7 @@ class Character : public QGraphicsPixmapItem {
 private :
     int speed;
 
+    int pv = 3;
 public:
 
     /* <-__---__---__---__---__--- Constructeur ---__---__---__---__--- -> */
