@@ -2,7 +2,6 @@
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
-
     this->mainScene = new MyScene;
 
     this->mainView = new QGraphicsView;
@@ -12,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     this->setWindowTitle("Invasion des aliens");
     this->resize(400, 800);
 
-    /* Menu d'aide */
+    /* Menu d'informations */
     helpMenu = menuBar()->addMenu(tr("&Informations"));
 
     QAction* actionHelp = new QAction(tr("&A propos"), this);

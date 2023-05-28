@@ -5,6 +5,7 @@ MyScene::MyScene(QObject* parent) : QGraphicsScene(parent) {
 
     /* On crée le joueur */
     this->player = new Character("../img/emoji_caca.png");
+    this->player->setPos(200, 700);
     this->addItem(player);
 
     /* On charge l'image de fond */
@@ -12,7 +13,7 @@ MyScene::MyScene(QObject* parent) : QGraphicsScene(parent) {
     //this->setSceneRect(0, 0, background.width(), background.height());
 
     /* Méthodes d'ajout d'éléments à la scène -- tiré du sujet */
-    QGraphicsRectItem* qgri = new QGraphicsRectItem(10, 100, 300, 200);
+    QGraphicsRectItem* qgri = new QGraphicsRectItem(0, 0, 400, 800);
     this->addItem(qgri);
 
     QGraphicsTextItem* qgti = new QGraphicsTextItem("CIR2 Nantes");
