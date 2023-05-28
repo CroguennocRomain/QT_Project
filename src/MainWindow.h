@@ -16,6 +16,7 @@ class MainWindow : public QMainWindow {
 private :
     MyScene* mainScene;
     QGraphicsView* mainView;
+
     QMenu* helpMenu;
 
 
@@ -25,6 +26,8 @@ public:
 
 public slots:
     void slot_aboutMenu();
+    void slot_commandeMenu();
+    void slot_reglesMenu();
 };
 
 
