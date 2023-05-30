@@ -12,19 +12,28 @@
 class Character : public QGraphicsPixmapItem {
 
 private :
-    int speed;
+    QGraphicsLineItem* leftHitBox;
+    QGraphicsLineItem* topHitBox;
+    QGraphicsLineItem* rightHitBox;
+    QGraphicsLineItem* botHitBox;
 
+    int speed;
     int pv = 3;
 public:
 
     /* <-__---__---__---__---__--- Constructeur ---__---__---__---__--- -> */
     Character(QString imageFileName) : QGraphicsPixmapItem(QPixmap(imageFileName).scaled(50,50)) {
         this->speed = 10;
+
+        this->defineHitBox();
     }
 
     /* <-__---__---__---__---__--- Getters et setters ---__---__---__---__--- -> */
     int getSpeed() const { return this->speed; }
     void setSpeed(int new_speed) { this->speed = new_speed; }
+
+    int getPV() const { return this->pv; }
+    void setPV(int new_pv) { this->pv = new_pv; }
 
     /* <-__---__---__---__---__--- Méthodes ---__---__---__---__--- -> */
     void moveTest();
@@ -34,6 +43,8 @@ public:
     void moveLeft();
     void moveRight();
 
+    void defineHitBox();
+    bool collideHitBox(QGraphicsItem* item);
 
 
 };

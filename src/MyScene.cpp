@@ -8,6 +8,11 @@ MyScene::MyScene(QObject* parent) : QGraphicsScene(parent) {
     this->player->setPos(200, 700);
     this->addItem(player);
 
+    /* On crée un ennemi */
+    this->enemies.push_back(new Character("../img/emoji_caca.png"));
+    this->enemies[0]->setPos(100, 100);
+    this->addItem(enemies[0]);
+
     /* On charge l'image de fond */
     //this->background.load("../img/espace.jpg");
     //this->setSceneRect(0, 0, background.width(), background.height());
@@ -67,6 +72,12 @@ void MyScene::update() {
         this->player->moveRight();
     }
 
+    /* On gère les collisions */
+    for (int i = 0; i < this->enemies.size(); i++) {
+        if (this->player->collidesWithItem(this->enemies[i])) {
+            this->player->setPos(200, 700);
+        }
+    }
 }
 
 /* #-------------------------------------------------------------#

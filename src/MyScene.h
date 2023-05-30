@@ -17,14 +17,13 @@ private :
     QTimer* timer;
 
     Character* player;
+    QVector<Character*> enemies;
 
     /* Paramètres de gestion des déplacement */
-
     bool isMovingUp = false;
     bool isMovingDown = false;
     bool isMovingLeft = false;
     bool isMovingRight = false;
-
 
 public:
     /* <-__---__---__---__---__--- Constructeur ---__---__---__---__--- -> */
