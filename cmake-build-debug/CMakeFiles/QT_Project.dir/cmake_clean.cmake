@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/QT_Project_autogen.dir/ParseCache.txt"
   "QT_Project_autogen"
   "CMakeFiles/QT_Project.dir/QT_Project_autogen/mocs_compilation.cpp.o"
+  "CMakeFiles/QT_Project.dir/src/Entity/Alien.cpp.o"
   "CMakeFiles/QT_Project.dir/src/Entity/Character.cpp.o"
   "CMakeFiles/QT_Project.dir/src/MainWindow.cpp.o"
   "CMakeFiles/QT_Project.dir/src/MyScene.cpp.o"

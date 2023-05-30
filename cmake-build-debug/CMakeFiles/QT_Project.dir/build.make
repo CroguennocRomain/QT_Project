@@ -89,9 +89,22 @@ CMakeFiles/QT_Project.dir/QT_Project_autogen/mocs_compilation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/QT_Project.dir/QT_Project_autogen/mocs_compilation.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/QT_Project_autogen/mocs_compilation.cpp -o CMakeFiles/QT_Project.dir/QT_Project_autogen/mocs_compilation.cpp.s
 
+CMakeFiles/QT_Project.dir/src/Entity/Alien.cpp.o: CMakeFiles/QT_Project.dir/flags.make
+CMakeFiles/QT_Project.dir/src/Entity/Alien.cpp.o: ../src/Entity/Alien.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/QT_Project.dir/src/Entity/Alien.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/QT_Project.dir/src/Entity/Alien.cpp.o -c /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src/Entity/Alien.cpp
+
+CMakeFiles/QT_Project.dir/src/Entity/Alien.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/QT_Project.dir/src/Entity/Alien.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src/Entity/Alien.cpp > CMakeFiles/QT_Project.dir/src/Entity/Alien.cpp.i
+
+CMakeFiles/QT_Project.dir/src/Entity/Alien.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/QT_Project.dir/src/Entity/Alien.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src/Entity/Alien.cpp -o CMakeFiles/QT_Project.dir/src/Entity/Alien.cpp.s
+
 CMakeFiles/QT_Project.dir/src/Entity/Character.cpp.o: CMakeFiles/QT_Project.dir/flags.make
 CMakeFiles/QT_Project.dir/src/Entity/Character.cpp.o: ../src/Entity/Character.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/QT_Project.dir/src/Entity/Character.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/QT_Project.dir/src/Entity/Character.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/QT_Project.dir/src/Entity/Character.cpp.o -c /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src/Entity/Character.cpp
 
 CMakeFiles/QT_Project.dir/src/Entity/Character.cpp.i: cmake_force
@@ -104,7 +117,7 @@ CMakeFiles/QT_Project.dir/src/Entity/Character.cpp.s: cmake_force
 
 CMakeFiles/QT_Project.dir/src/MainWindow.cpp.o: CMakeFiles/QT_Project.dir/flags.make
 CMakeFiles/QT_Project.dir/src/MainWindow.cpp.o: ../src/MainWindow.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/QT_Project.dir/src/MainWindow.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/QT_Project.dir/src/MainWindow.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/QT_Project.dir/src/MainWindow.cpp.o -c /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src/MainWindow.cpp
 
 CMakeFiles/QT_Project.dir/src/MainWindow.cpp.i: cmake_force
@@ -117,7 +130,7 @@ CMakeFiles/QT_Project.dir/src/MainWindow.cpp.s: cmake_force
 
 CMakeFiles/QT_Project.dir/src/MyScene.cpp.o: CMakeFiles/QT_Project.dir/flags.make
 CMakeFiles/QT_Project.dir/src/MyScene.cpp.o: ../src/MyScene.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/QT_Project.dir/src/MyScene.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/QT_Project.dir/src/MyScene.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/QT_Project.dir/src/MyScene.cpp.o -c /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src/MyScene.cpp
 
 CMakeFiles/QT_Project.dir/src/MyScene.cpp.i: cmake_force
@@ -130,7 +143,7 @@ CMakeFiles/QT_Project.dir/src/MyScene.cpp.s: cmake_force
 
 CMakeFiles/QT_Project.dir/src/main.cpp.o: CMakeFiles/QT_Project.dir/flags.make
 CMakeFiles/QT_Project.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/QT_Project.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/QT_Project.dir/src/main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/QT_Project.dir/src/main.cpp.o -c /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src/main.cpp
 
 CMakeFiles/QT_Project.dir/src/main.cpp.i: cmake_force
@@ -144,6 +157,7 @@ CMakeFiles/QT_Project.dir/src/main.cpp.s: cmake_force
 # Object files for target QT_Project
 QT_Project_OBJECTS = \
 "CMakeFiles/QT_Project.dir/QT_Project_autogen/mocs_compilation.cpp.o" \
+"CMakeFiles/QT_Project.dir/src/Entity/Alien.cpp.o" \
 "CMakeFiles/QT_Project.dir/src/Entity/Character.cpp.o" \
 "CMakeFiles/QT_Project.dir/src/MainWindow.cpp.o" \
 "CMakeFiles/QT_Project.dir/src/MyScene.cpp.o" \
@@ -153,6 +167,7 @@ QT_Project_OBJECTS = \
 QT_Project_EXTERNAL_OBJECTS =
 
 QT_Project: CMakeFiles/QT_Project.dir/QT_Project_autogen/mocs_compilation.cpp.o
+QT_Project: CMakeFiles/QT_Project.dir/src/Entity/Alien.cpp.o
 QT_Project: CMakeFiles/QT_Project.dir/src/Entity/Character.cpp.o
 QT_Project: CMakeFiles/QT_Project.dir/src/MainWindow.cpp.o
 QT_Project: CMakeFiles/QT_Project.dir/src/MyScene.cpp.o
@@ -164,7 +179,7 @@ QT_Project: /usr/lib/x86_64-linux-gnu/libQt6Core.so.6.4.2
 QT_Project: /usr/lib/x86_64-linux-gnu/libGLX.so
 QT_Project: /usr/lib/x86_64-linux-gnu/libOpenGL.so
 QT_Project: CMakeFiles/QT_Project.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable QT_Project"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable QT_Project"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/QT_Project.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

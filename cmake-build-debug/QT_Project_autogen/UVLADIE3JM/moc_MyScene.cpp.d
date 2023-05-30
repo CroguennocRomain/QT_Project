@@ -1,5 +1,6 @@
 /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/QT_Project_autogen/UVLADIE3JM/moc_MyScene.cpp: /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src/MyScene.h \
   /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/QT_Project_autogen/moc_predefs.h \
+  /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src/Entity/Alien.h \
   /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src/Entity/Character.h \
   /usr/include/alloca.h \
   /usr/include/assert.h \
