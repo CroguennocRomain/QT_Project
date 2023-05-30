@@ -9,7 +9,7 @@ MyScene::MyScene(QObject* parent) : QGraphicsScene(parent) {
     this->addItem(player);
 
     /* On crée un ennemi */
-    this->enemies.push_back(new Character("../img/emoji_caca.png"));
+    this->enemies.push_back(new Alien("../img/alien_noir.png"));
     this->enemies[0]->setPos(100, 100);
     this->addItem(enemies[0]);
 
@@ -73,8 +73,8 @@ void MyScene::update() {
     }
 
     /* On gère les collisions */
-    for (int i = 0; i < this->enemies.size(); i++) {
-        if (this->player->collidesWithItem(this->enemies[i])) {
+    for (auto & enemie : this->enemies) {
+        if (this->player->collidesWithItem(enemie)) {
             this->player->setPos(200, 700);
         }
     }

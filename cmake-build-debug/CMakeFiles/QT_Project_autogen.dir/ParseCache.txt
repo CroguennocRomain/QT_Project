@@ -4,6 +4,7 @@
  mmc:Q_OBJECT
  mdp:/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src/MainWindow.h
  mdp:/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/QT_Project_autogen/moc_predefs.h
+ mdp:/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src/Entity/Alien.h
  mdp:/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src/Entity/Character.h
  mdp:/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src/MyScene.h
  mdp:/usr/include/alloca.h
@@ -429,6 +430,7 @@
  mmc:Q_OBJECT
  mdp:/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src/MyScene.h
  mdp:/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/QT_Project_autogen/moc_predefs.h
+ mdp:/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src/Entity/Alien.h
  mdp:/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src/Entity/Character.h
  mdp:/usr/include/alloca.h
  mdp:/usr/include/assert.h
@@ -828,5 +830,7 @@
  mdp:/usr/lib/gcc/x86_64-linux-gnu/10/include/stddef.h
 /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src/Entity/Character.cpp
 /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src/MainWindow.cpp
+/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src/Entity/Alien.h
 /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src/MyScene.cpp
 /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src/main.cpp
+/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src/Entity/Alien.cpp

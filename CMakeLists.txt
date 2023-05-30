@@ -8,6 +8,6 @@ find_package(Qt6Widgets CONFIG REQUIRED)
 
 file (GLOB_RECURSE Projet src/*.cpp src/*.h)
 
-add_executable(QT_Project ${Projet} src/Entity/Character.h src/Entity/Character.cpp)
+add_executable(QT_Project ${Projet} )
 
 target_link_libraries(QT_Project Qt6::Widgets)

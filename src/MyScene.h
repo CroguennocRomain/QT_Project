@@ -3,6 +3,7 @@
 
 #include <QGraphicsScene>
 #include "Entity/Character.h"
+#include "Entity/Alien.h"
 
 #include <QPixmap>
 #include <QTimer>
@@ -17,7 +18,7 @@ private :
     QTimer* timer;
 
     Character* player;
-    QVector<Character*> enemies;
+    QVector<Alien*> enemies;
 
     /* Paramètres de gestion des déplacement */
     bool isMovingUp = false;

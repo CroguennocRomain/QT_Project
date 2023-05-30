@@ -182,6 +182,33 @@ QT_Project_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/QT_Project.dir/build.make CMakeFiles/QT_Project.dir/QT_Project_autogen/mocs_compilation.cpp.s
 .PHONY : QT_Project_autogen/mocs_compilation.cpp.s
 
+src/Entity/Alien.o: src/Entity/Alien.cpp.o
+
+.PHONY : src/Entity/Alien.o
+
+# target to build an object file
+src/Entity/Alien.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QT_Project.dir/build.make CMakeFiles/QT_Project.dir/src/Entity/Alien.cpp.o
+.PHONY : src/Entity/Alien.cpp.o
+
+src/Entity/Alien.i: src/Entity/Alien.cpp.i
+
+.PHONY : src/Entity/Alien.i
+
+# target to preprocess a source file
+src/Entity/Alien.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QT_Project.dir/build.make CMakeFiles/QT_Project.dir/src/Entity/Alien.cpp.i
+.PHONY : src/Entity/Alien.cpp.i
+
+src/Entity/Alien.s: src/Entity/Alien.cpp.s
+
+.PHONY : src/Entity/Alien.s
+
+# target to generate assembly for a file
+src/Entity/Alien.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QT_Project.dir/build.make CMakeFiles/QT_Project.dir/src/Entity/Alien.cpp.s
+.PHONY : src/Entity/Alien.cpp.s
+
 src/Entity/Character.o: src/Entity/Character.cpp.o
 
 .PHONY : src/Entity/Character.o
@@ -303,6 +330,9 @@ help:
 	@echo "... QT_Project_autogen/mocs_compilation.o"
 	@echo "... QT_Project_autogen/mocs_compilation.i"
 	@echo "... QT_Project_autogen/mocs_compilation.s"
+	@echo "... src/Entity/Alien.o"
+	@echo "... src/Entity/Alien.i"
+	@echo "... src/Entity/Alien.s"
 	@echo "... src/Entity/Character.o"
 	@echo "... src/Entity/Character.i"
 	@echo "... src/Entity/Character.s"
