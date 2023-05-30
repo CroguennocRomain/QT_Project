@@ -200,6 +200,11 @@
 			"EIMNEMNXI3/moc_Character.cpp"
 		],
 		[
+			"/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src/Entity/projectile.h",
+			"Mu",
+			"EIMNEMNXI3/moc_projectile.cpp"
+		],
+		[
 			"/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src/MainWindow.h",
 			"Mu",
 			"UVLADIE3JM/moc_MainWindow.cpp"
@@ -273,6 +278,10 @@
 		],
 		[
 			"/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src/Entity/Character.cpp",
+			"Mu"
+		],
+		[
+			"/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src/Entity/projectile.cpp",
 			"Mu"
 		],
 		[

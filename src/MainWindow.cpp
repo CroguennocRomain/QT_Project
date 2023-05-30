@@ -9,7 +9,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 
     this->setCentralWidget(mainView);
     this->setWindowTitle("Invasion des aliens");
-    this->resize(400, 800);
+    this->resize(SCREEN_WIDTH+100, SCREEN_HEIGHT+100);
 
     /* Menu d'informations */
     helpMenu = menuBar()->addMenu(tr("&Informations"));

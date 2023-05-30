@@ -1,6 +1,10 @@
 #ifndef QT_PROJECT_ENTITY_H
 #define QT_PROJECT_ENTITY_H
 
+// Variables globales
+#define SCREEN_WIDTH 400
+#define SCREEN_HEIGHT 800
+
 #include <iostream>
 #include <QKeyEvent>
 #include <QPixmap>
@@ -8,6 +12,7 @@
 #include <QGraphicsItem>
 #include <QGraphicsScene>
 #include <QPointF>
+
 
 class Character : public QGraphicsPixmapItem {
 
@@ -23,7 +28,7 @@ public:
 
     /* <-__---__---__---__---__--- Constructeur ---__---__---__---__--- -> */
     Character(QString imageFileName) : QGraphicsPixmapItem(QPixmap(imageFileName).scaled(50,50)) {
-        this->speed = 10;
+        this->speed = 4;
 
         this->defineHitBox();
     }
@@ -42,9 +47,16 @@ public:
     void moveDown();
     void moveLeft();
     void moveRight();
-
+    /* Gestion des collisions */
     void defineHitBox();
     bool collideHitBox(QGraphicsItem* item);
+    /* Gestion de la sortie de l'écran */
+    void checkOutOfScreen();
+    void checkOutOfScreenLeft();
+    void checkOutOfScreenRight();
+    void checkOutOfScreenTop();
+    void checkOutOfScreenBot();
+
 
 
 };

@@ -18,7 +18,7 @@ MyScene::MyScene(QObject* parent) : QGraphicsScene(parent) {
     //this->setSceneRect(0, 0, background.width(), background.height());
 
     /* Méthodes d'ajout d'éléments à la scène -- tiré du sujet */
-    QGraphicsRectItem* qgri = new QGraphicsRectItem(0, 0, 400, 800);
+    QGraphicsRectItem* qgri = new QGraphicsRectItem(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     this->addItem(qgri);
 
     QGraphicsTextItem* qgti = new QGraphicsTextItem("CIR2 Nantes");
@@ -59,11 +59,14 @@ void MyScene::update() {
 
     /* On gère les déplacements du personnage dans le update pour plus de fluidité */
 
+    this->player->checkOutOfScreen();
+
     if (this->isMovingUp) {
         this->player->moveUp();
     }
     else if (this->isMovingDown) {
         this->player->moveDown();
+        std::cout<< this->player->pos().y() << std::endl;
     }
     else if (this->isMovingLeft) {
         this->player->moveLeft();
@@ -71,6 +74,7 @@ void MyScene::update() {
     else if (this->isMovingRight) {
         this->player->moveRight();
     }
+
 
     /* On gère les collisions */
     for (auto & enemie : this->enemies) {
@@ -117,6 +121,7 @@ void MyScene::keyPressEvent(QKeyEvent* event) {
         if (event->key() == Qt::Key_D) {
             this->isMovingRight = true;
         }
+
 
     }
 }

@@ -236,6 +236,33 @@ src/Entity/Character.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/QT_Project.dir/build.make CMakeFiles/QT_Project.dir/src/Entity/Character.cpp.s
 .PHONY : src/Entity/Character.cpp.s
 
+src/Entity/projectile.o: src/Entity/projectile.cpp.o
+
+.PHONY : src/Entity/projectile.o
+
+# target to build an object file
+src/Entity/projectile.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QT_Project.dir/build.make CMakeFiles/QT_Project.dir/src/Entity/projectile.cpp.o
+.PHONY : src/Entity/projectile.cpp.o
+
+src/Entity/projectile.i: src/Entity/projectile.cpp.i
+
+.PHONY : src/Entity/projectile.i
+
+# target to preprocess a source file
+src/Entity/projectile.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QT_Project.dir/build.make CMakeFiles/QT_Project.dir/src/Entity/projectile.cpp.i
+.PHONY : src/Entity/projectile.cpp.i
+
+src/Entity/projectile.s: src/Entity/projectile.cpp.s
+
+.PHONY : src/Entity/projectile.s
+
+# target to generate assembly for a file
+src/Entity/projectile.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QT_Project.dir/build.make CMakeFiles/QT_Project.dir/src/Entity/projectile.cpp.s
+.PHONY : src/Entity/projectile.cpp.s
+
 src/MainWindow.o: src/MainWindow.cpp.o
 
 .PHONY : src/MainWindow.o
@@ -336,6 +363,9 @@ help:
 	@echo "... src/Entity/Character.o"
 	@echo "... src/Entity/Character.i"
 	@echo "... src/Entity/Character.s"
+	@echo "... src/Entity/projectile.o"
+	@echo "... src/Entity/projectile.i"
+	@echo "... src/Entity/projectile.s"
 	@echo "... src/MainWindow.o"
 	@echo "... src/MainWindow.i"
 	@echo "... src/MainWindow.s"

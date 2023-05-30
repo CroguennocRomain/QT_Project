@@ -12,28 +12,28 @@ void Character::moveUp() {
     // On récupère la position actuelle
     QPointF pos = this->pos();
     // On déplace le personnage vers le haut
-    this->setPos(pos.rx(), pos.ry() - 1);
+    this->setPos(pos.rx(), pos.ry() - this->getSpeed());
 }
 
 void Character::moveDown() {
     // On récupère la position actuelle
     QPointF pos = this->pos();
     // On déplace le personnage vers le bas
-    this->setPos(pos.rx(), pos.ry() + 1);
+    this->setPos(pos.rx(), pos.ry() + this->getSpeed());
 }
 
 void Character::moveLeft() {
     // On récupère la position actuelle
     QPointF pos = this->pos();
     // On déplace le personnage vers la gauche
-    this->setPos(pos.rx() - 1, pos.ry());
+    this->setPos(pos.rx() - this->getSpeed(), pos.ry());
 }
 
 void Character::moveRight() {
     // On récupère la position actuelle
     QPointF pos = this->pos();
     // On déplace le personnage vers la droite
-    this->setPos(pos.rx() + 1, pos.ry());
+    this->setPos(pos.rx() + this->getSpeed(), pos.ry());
 }
 
 /* #-------------------------------------------------------------#
@@ -61,5 +61,39 @@ bool Character::collideHitBox(QGraphicsItem *item) {
     }
     else {
         return false;
+    }
+}
+
+/* #-------------------------------------------------------------#
+   #---# Sortie de l'écran  #------------------------------------#
+   #-------------------------------------------------------------# */
+void Character::checkOutOfScreen() {
+    this->checkOutOfScreenBot();
+    this->checkOutOfScreenTop();
+    this->checkOutOfScreenLeft();
+    this->checkOutOfScreenRight();
+}
+
+void Character::checkOutOfScreenBot() {
+    if (this->pos().ry() > SCREEN_HEIGHT- this->pixmap().height()) {
+        this->setPos(this->pos().rx(), SCREEN_HEIGHT - this->pixmap().height());
+    }
+}
+
+void Character::checkOutOfScreenTop() {
+    if (this->pos().ry() < 0) {
+        this->setPos(this->pos().rx(), 0 );
+    }
+}
+
+void Character::checkOutOfScreenLeft() {
+    if (this->pos().rx() < 0) {
+        this->setPos(0 , this->pos().ry());
+    }
+}
+
+void Character::checkOutOfScreenRight() {
+    if (this->pos().rx() > SCREEN_WIDTH- this->pixmap().width()) {
+        this->setPos(SCREEN_WIDTH - this->pixmap().width(), this->pos().ry());
     }
 }
