@@ -14,8 +14,8 @@ MyScene::MyScene(QObject* parent) : QGraphicsScene(parent) {
     this->addItem(enemies[0]);
 
     /* On charge l'image de fond */
-    //this->background.load("../img/espace.jpg");
-    //this->setSceneRect(0, 0, background.width(), background.height());
+    this->background.load("../img/BackGround.jpg");
+    this->setSceneRect(0, 0, background.width(), background.height());
 
     /* Méthodes d'ajout d'éléments à la scène -- tiré du sujet */
     QGraphicsRectItem* qgri = new QGraphicsRectItem(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
