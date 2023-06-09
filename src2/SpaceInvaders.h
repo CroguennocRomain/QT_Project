@@ -10,13 +10,14 @@
 class SpaceInvaders : public QGraphicsView {
 Q_OBJECT
 public:
-    SpaceInvaders(QSize screenSize, QWidget* parent = nullptr);
+    SpaceInvaders(QWidget* parent = nullptr);
 
     void run();
     void checkPoints();
 
 protected:
     void keyPressEvent(QKeyEvent* pEvent) override;
+    void keyReleaseEvent(QKeyEvent* pEvent) override;
 
 public slots:
     void onCreateEnemy();
@@ -25,10 +26,19 @@ public slots:
     void onDecreaseHealth();
     void onGameOver();
 
+    void update();
+
 private:
+    QTimer*    timer;
+    QTimer*    spawnTimer;
     Cannon*    m_pCannon = nullptr;
     Points*    m_pPoints = nullptr;
-    QSize       m_screenSize;
+
+    /* Paramètres de gestion des déplacement */
+    bool isMovingUp = false;
+    bool isMovingDown = false;
+    bool isMovingLeft = false;
+    bool isMovingRight = false;
 };
 
 
