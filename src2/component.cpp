@@ -72,15 +72,15 @@ void Alien::setColor(Color newColor)
         case Color::Pink:
             setPixmap(QPixmap("../img/AlienPink.png").scaled(EntitySize));
             break;
-        case Color::Grenn:
+        /*case Color::Grenn:
             setPixmap(QPixmap("../img/AlienGreen.png").scaled(EntitySize));
-            break;
+            break;*/
         case Color::Blue:
             setPixmap(QPixmap("../img/AlienBlue.png").scaled(EntitySize));
             break;
-        case Color::Yellow:
+        /*case Color::Yellow:
             setPixmap(QPixmap("../img/AlienYellow.png").scaled(EntitySize));
-            break;
+            break;*/
         case Color::Red:
             setPixmap(QPixmap("../img/AlienRed.png").scaled(EntitySize));
             break;
@@ -96,15 +96,15 @@ void Alien::setPv()
             case Color::Pink:
                 this->PV = 1;
                 break;
-            case Color::Grenn:
+            /*case Color::Grenn:
                 this->PV = 2;
-                break;
+                break;*/
             case Color::Blue:
                 this->PV = 3;
                 break;
-            case Color::Yellow:
+            /*case Color::Yellow:
                 this->PV = 4;
-                break;
+                break;*/
             case Color::Red:
                 this->PV = 5;
                 break;
@@ -120,15 +120,15 @@ void Alien::setScore()
             case Color::Pink:
                 this->score = 20;
                 break;
-            case Color::Grenn:
+            /*case Color::Grenn:
                 this->score = 40;
-                break;
+                break;*/
             case Color::Blue:
                 this->score = 60;
                 break;
-            case Color::Yellow:
+            /*case Color::Yellow:
                 this->score = 80;
-                break;
+                break;*/
             case Color::Red:
                 this->score = 100;
                 break;
@@ -141,12 +141,8 @@ void Alien::setScore()
 void Alien::onMove()
 {
     setPos(x(), y() + 5);
+    setPos(x(), y() + 5);
 
-    if (pos().y() >= scene()->height() - EntitySize.height()) {
-        scene()->removeItem(this);
-        emit sigDecreaseHealth();
-        delete this;
-    }
     /* <>---< Gestion de la collision avec le joueur >---<> */
     QList<QGraphicsItem*> lstCollidingItems = collidingItems();
     /* Si l'Alien touche le joueur c'est la fin */
