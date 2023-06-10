@@ -8,6 +8,7 @@
 #include <QGraphicsItem>
 #include <QGraphicsSimpleTextItem>
 #include <QKeyEvent>
+#include <QTableWidget>
 
 #include <QTimer>
 #include <QGraphicsScene>

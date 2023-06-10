@@ -9,6 +9,7 @@
 #include <QMessageBox>
 
 #include "MyScene.h"
+#include "Scoreboard.h"
 
 class MainWindow : public QMainWindow {
     Q_OBJECT
@@ -16,6 +17,7 @@ class MainWindow : public QMainWindow {
 private :
     MyScene* mainScene;
     QGraphicsView* mainView;
+    Scoreboard* scoreScene;
 
     QMenu* helpMenu;
 

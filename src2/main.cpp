@@ -1,13 +1,13 @@
 #include "SpaceInvaders.h"
-
+#include "Scoreboard.h"
 int main(int argc, char *argv[]) {
     QApplication a(argc, argv);
-
-    SpaceInvaders* pGame = new SpaceInvaders();
+    Scoreboard* pGame = new Scoreboard();
+    //SpaceInvaders* pGame = new SpaceInvaders();
     pGame->show();
     // Avoir la fenetre d'une taille précise
     pGame->setFixedSize(400, 800);
-    pGame->run();
+    //pGame->run();
 
 
 
