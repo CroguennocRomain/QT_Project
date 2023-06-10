@@ -34,6 +34,9 @@ public:
 /* <-__---__---__---__---__--- Constructeur ---__---__---__---__--- -> */
     Game(QWidget* parent = nullptr);
 
+/* <-__---__---__---__---__--- Destructeur ---__---__---__---__--- -> */
+    ~Game();
+
 /* <-__---__---__---__---__--- Méthodes ---__---__---__---__--- -> */
     void drawBackground(QPainter* painter, const QRectF& rect) override;
     void run();
