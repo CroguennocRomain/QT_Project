@@ -4,11 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/mnt/c/Users/44cro/CLionProjects/QT_Project/cmake-build-debug/QT_Project_autogen/mocs_compilation.cpp" "/mnt/c/Users/44cro/CLionProjects/QT_Project/cmake-build-debug/CMakeFiles/QT_Project.dir/QT_Project_autogen/mocs_compilation.cpp.o"
-  "/mnt/c/Users/44cro/CLionProjects/QT_Project/src2/Scoreboard.cpp" "/mnt/c/Users/44cro/CLionProjects/QT_Project/cmake-build-debug/CMakeFiles/QT_Project.dir/src2/Scoreboard.cpp.o"
-  "/mnt/c/Users/44cro/CLionProjects/QT_Project/src2/SpaceInvaders.cpp" "/mnt/c/Users/44cro/CLionProjects/QT_Project/cmake-build-debug/CMakeFiles/QT_Project.dir/src2/SpaceInvaders.cpp.o"
-  "/mnt/c/Users/44cro/CLionProjects/QT_Project/src2/component.cpp" "/mnt/c/Users/44cro/CLionProjects/QT_Project/cmake-build-debug/CMakeFiles/QT_Project.dir/src2/component.cpp.o"
-  "/mnt/c/Users/44cro/CLionProjects/QT_Project/src2/main.cpp" "/mnt/c/Users/44cro/CLionProjects/QT_Project/cmake-build-debug/CMakeFiles/QT_Project.dir/src2/main.cpp.o"
+  "/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/QT_Project_autogen/mocs_compilation.cpp" "/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/CMakeFiles/QT_Project.dir/QT_Project_autogen/mocs_compilation.cpp.o"
+  "/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src2/Game.cpp" "/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/CMakeFiles/QT_Project.dir/src2/Game.cpp.o"
+  "/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src2/component.cpp" "/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/CMakeFiles/QT_Project.dir/src2/component.cpp.o"
+  "/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src2/main.cpp" "/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/CMakeFiles/QT_Project.dir/src2/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

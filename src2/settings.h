@@ -20,8 +20,14 @@
 #include <QApplication>
 
 enum class Color {
+    Pink, Blue, Red,
+};
+
+/*
+enum class Color {
     Pink, Grenn, Blue, Yellow, Red,
 };
+ */
 
 int   const SCREEN_WIDTH   = 400;
 int   const SCREEN_HEIGHT  = 800;

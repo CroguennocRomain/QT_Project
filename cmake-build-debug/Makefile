@@ -67,10 +67,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Users/44cro/CLionProjects/QT_Project
+CMAKE_SOURCE_DIR = /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/44cro/CLionProjects/QT_Project/cmake-build-debug
+CMAKE_BINARY_DIR = /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -99,9 +99,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/44cro/CLionProjects/QT_Project/cmake-build-debug/CMakeFiles /mnt/c/Users/44cro/CLionProjects/QT_Project/cmake-build-debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/CMakeFiles /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/44cro/CLionProjects/QT_Project/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -182,59 +182,32 @@ QT_Project_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/QT_Project.dir/build.make CMakeFiles/QT_Project.dir/QT_Project_autogen/mocs_compilation.cpp.s
 .PHONY : QT_Project_autogen/mocs_compilation.cpp.s
 
-src2/Scoreboard.o: src2/Scoreboard.cpp.o
+src2/Game.o: src2/Game.cpp.o
 
-.PHONY : src2/Scoreboard.o
-
-# target to build an object file
-src2/Scoreboard.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/QT_Project.dir/build.make CMakeFiles/QT_Project.dir/src2/Scoreboard.cpp.o
-.PHONY : src2/Scoreboard.cpp.o
-
-src2/Scoreboard.i: src2/Scoreboard.cpp.i
-
-.PHONY : src2/Scoreboard.i
-
-# target to preprocess a source file
-src2/Scoreboard.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/QT_Project.dir/build.make CMakeFiles/QT_Project.dir/src2/Scoreboard.cpp.i
-.PHONY : src2/Scoreboard.cpp.i
-
-src2/Scoreboard.s: src2/Scoreboard.cpp.s
-
-.PHONY : src2/Scoreboard.s
-
-# target to generate assembly for a file
-src2/Scoreboard.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/QT_Project.dir/build.make CMakeFiles/QT_Project.dir/src2/Scoreboard.cpp.s
-.PHONY : src2/Scoreboard.cpp.s
-
-src2/SpaceInvaders.o: src2/SpaceInvaders.cpp.o
-
-.PHONY : src2/SpaceInvaders.o
+.PHONY : src2/Game.o
 
 # target to build an object file
-src2/SpaceInvaders.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/QT_Project.dir/build.make CMakeFiles/QT_Project.dir/src2/SpaceInvaders.cpp.o
-.PHONY : src2/SpaceInvaders.cpp.o
+src2/Game.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QT_Project.dir/build.make CMakeFiles/QT_Project.dir/src2/Game.cpp.o
+.PHONY : src2/Game.cpp.o
 
-src2/SpaceInvaders.i: src2/SpaceInvaders.cpp.i
+src2/Game.i: src2/Game.cpp.i
 
-.PHONY : src2/SpaceInvaders.i
+.PHONY : src2/Game.i
 
 # target to preprocess a source file
-src2/SpaceInvaders.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/QT_Project.dir/build.make CMakeFiles/QT_Project.dir/src2/SpaceInvaders.cpp.i
-.PHONY : src2/SpaceInvaders.cpp.i
+src2/Game.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QT_Project.dir/build.make CMakeFiles/QT_Project.dir/src2/Game.cpp.i
+.PHONY : src2/Game.cpp.i
 
-src2/SpaceInvaders.s: src2/SpaceInvaders.cpp.s
+src2/Game.s: src2/Game.cpp.s
 
-.PHONY : src2/SpaceInvaders.s
+.PHONY : src2/Game.s
 
 # target to generate assembly for a file
-src2/SpaceInvaders.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/QT_Project.dir/build.make CMakeFiles/QT_Project.dir/src2/SpaceInvaders.cpp.s
-.PHONY : src2/SpaceInvaders.cpp.s
+src2/Game.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QT_Project.dir/build.make CMakeFiles/QT_Project.dir/src2/Game.cpp.s
+.PHONY : src2/Game.cpp.s
 
 src2/component.o: src2/component.cpp.o
 
@@ -303,12 +276,9 @@ help:
 	@echo "... QT_Project_autogen/mocs_compilation.o"
 	@echo "... QT_Project_autogen/mocs_compilation.i"
 	@echo "... QT_Project_autogen/mocs_compilation.s"
-	@echo "... src2/Scoreboard.o"
-	@echo "... src2/Scoreboard.i"
-	@echo "... src2/Scoreboard.s"
-	@echo "... src2/SpaceInvaders.o"
-	@echo "... src2/SpaceInvaders.i"
-	@echo "... src2/SpaceInvaders.s"
+	@echo "... src2/Game.o"
+	@echo "... src2/Game.i"
+	@echo "... src2/Game.s"
 	@echo "... src2/component.o"
 	@echo "... src2/component.i"
 	@echo "... src2/component.s"

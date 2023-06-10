@@ -62,10 +62,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Users/44cro/CLionProjects/QT_Project
+CMAKE_SOURCE_DIR = /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/44cro/CLionProjects/QT_Project/cmake-build-debug
+CMAKE_BINARY_DIR = /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/QT_Project.dir/depend.make
@@ -78,74 +78,60 @@ include CMakeFiles/QT_Project.dir/flags.make
 
 CMakeFiles/QT_Project.dir/QT_Project_autogen/mocs_compilation.cpp.o: CMakeFiles/QT_Project.dir/flags.make
 CMakeFiles/QT_Project.dir/QT_Project_autogen/mocs_compilation.cpp.o: QT_Project_autogen/mocs_compilation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/44cro/CLionProjects/QT_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/QT_Project.dir/QT_Project_autogen/mocs_compilation.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/QT_Project.dir/QT_Project_autogen/mocs_compilation.cpp.o -c /mnt/c/Users/44cro/CLionProjects/QT_Project/cmake-build-debug/QT_Project_autogen/mocs_compilation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/QT_Project.dir/QT_Project_autogen/mocs_compilation.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/QT_Project.dir/QT_Project_autogen/mocs_compilation.cpp.o -c /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/QT_Project_autogen/mocs_compilation.cpp
 
 CMakeFiles/QT_Project.dir/QT_Project_autogen/mocs_compilation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/QT_Project.dir/QT_Project_autogen/mocs_compilation.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/44cro/CLionProjects/QT_Project/cmake-build-debug/QT_Project_autogen/mocs_compilation.cpp > CMakeFiles/QT_Project.dir/QT_Project_autogen/mocs_compilation.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/QT_Project_autogen/mocs_compilation.cpp > CMakeFiles/QT_Project.dir/QT_Project_autogen/mocs_compilation.cpp.i
 
 CMakeFiles/QT_Project.dir/QT_Project_autogen/mocs_compilation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/QT_Project.dir/QT_Project_autogen/mocs_compilation.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/44cro/CLionProjects/QT_Project/cmake-build-debug/QT_Project_autogen/mocs_compilation.cpp -o CMakeFiles/QT_Project.dir/QT_Project_autogen/mocs_compilation.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/QT_Project_autogen/mocs_compilation.cpp -o CMakeFiles/QT_Project.dir/QT_Project_autogen/mocs_compilation.cpp.s
 
-CMakeFiles/QT_Project.dir/src2/Scoreboard.cpp.o: CMakeFiles/QT_Project.dir/flags.make
-CMakeFiles/QT_Project.dir/src2/Scoreboard.cpp.o: ../src2/Scoreboard.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/44cro/CLionProjects/QT_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/QT_Project.dir/src2/Scoreboard.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/QT_Project.dir/src2/Scoreboard.cpp.o -c /mnt/c/Users/44cro/CLionProjects/QT_Project/src2/Scoreboard.cpp
+CMakeFiles/QT_Project.dir/src2/Game.cpp.o: CMakeFiles/QT_Project.dir/flags.make
+CMakeFiles/QT_Project.dir/src2/Game.cpp.o: ../src2/Game.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/QT_Project.dir/src2/Game.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/QT_Project.dir/src2/Game.cpp.o -c /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src2/Game.cpp
 
-CMakeFiles/QT_Project.dir/src2/Scoreboard.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/QT_Project.dir/src2/Scoreboard.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/44cro/CLionProjects/QT_Project/src2/Scoreboard.cpp > CMakeFiles/QT_Project.dir/src2/Scoreboard.cpp.i
+CMakeFiles/QT_Project.dir/src2/Game.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/QT_Project.dir/src2/Game.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src2/Game.cpp > CMakeFiles/QT_Project.dir/src2/Game.cpp.i
 
-CMakeFiles/QT_Project.dir/src2/Scoreboard.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/QT_Project.dir/src2/Scoreboard.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/44cro/CLionProjects/QT_Project/src2/Scoreboard.cpp -o CMakeFiles/QT_Project.dir/src2/Scoreboard.cpp.s
-
-CMakeFiles/QT_Project.dir/src2/SpaceInvaders.cpp.o: CMakeFiles/QT_Project.dir/flags.make
-CMakeFiles/QT_Project.dir/src2/SpaceInvaders.cpp.o: ../src2/SpaceInvaders.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/44cro/CLionProjects/QT_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/QT_Project.dir/src2/SpaceInvaders.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/QT_Project.dir/src2/SpaceInvaders.cpp.o -c /mnt/c/Users/44cro/CLionProjects/QT_Project/src2/SpaceInvaders.cpp
-
-CMakeFiles/QT_Project.dir/src2/SpaceInvaders.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/QT_Project.dir/src2/SpaceInvaders.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/44cro/CLionProjects/QT_Project/src2/SpaceInvaders.cpp > CMakeFiles/QT_Project.dir/src2/SpaceInvaders.cpp.i
-
-CMakeFiles/QT_Project.dir/src2/SpaceInvaders.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/QT_Project.dir/src2/SpaceInvaders.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/44cro/CLionProjects/QT_Project/src2/SpaceInvaders.cpp -o CMakeFiles/QT_Project.dir/src2/SpaceInvaders.cpp.s
+CMakeFiles/QT_Project.dir/src2/Game.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/QT_Project.dir/src2/Game.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src2/Game.cpp -o CMakeFiles/QT_Project.dir/src2/Game.cpp.s
 
 CMakeFiles/QT_Project.dir/src2/component.cpp.o: CMakeFiles/QT_Project.dir/flags.make
 CMakeFiles/QT_Project.dir/src2/component.cpp.o: ../src2/component.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/44cro/CLionProjects/QT_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/QT_Project.dir/src2/component.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/QT_Project.dir/src2/component.cpp.o -c /mnt/c/Users/44cro/CLionProjects/QT_Project/src2/component.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/QT_Project.dir/src2/component.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/QT_Project.dir/src2/component.cpp.o -c /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src2/component.cpp
 
 CMakeFiles/QT_Project.dir/src2/component.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/QT_Project.dir/src2/component.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/44cro/CLionProjects/QT_Project/src2/component.cpp > CMakeFiles/QT_Project.dir/src2/component.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src2/component.cpp > CMakeFiles/QT_Project.dir/src2/component.cpp.i
 
 CMakeFiles/QT_Project.dir/src2/component.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/QT_Project.dir/src2/component.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/44cro/CLionProjects/QT_Project/src2/component.cpp -o CMakeFiles/QT_Project.dir/src2/component.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src2/component.cpp -o CMakeFiles/QT_Project.dir/src2/component.cpp.s
 
 CMakeFiles/QT_Project.dir/src2/main.cpp.o: CMakeFiles/QT_Project.dir/flags.make
 CMakeFiles/QT_Project.dir/src2/main.cpp.o: ../src2/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/44cro/CLionProjects/QT_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/QT_Project.dir/src2/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/QT_Project.dir/src2/main.cpp.o -c /mnt/c/Users/44cro/CLionProjects/QT_Project/src2/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/QT_Project.dir/src2/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/QT_Project.dir/src2/main.cpp.o -c /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src2/main.cpp
 
 CMakeFiles/QT_Project.dir/src2/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/QT_Project.dir/src2/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/44cro/CLionProjects/QT_Project/src2/main.cpp > CMakeFiles/QT_Project.dir/src2/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src2/main.cpp > CMakeFiles/QT_Project.dir/src2/main.cpp.i
 
 CMakeFiles/QT_Project.dir/src2/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/QT_Project.dir/src2/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/44cro/CLionProjects/QT_Project/src2/main.cpp -o CMakeFiles/QT_Project.dir/src2/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src2/main.cpp -o CMakeFiles/QT_Project.dir/src2/main.cpp.s
 
 # Object files for target QT_Project
 QT_Project_OBJECTS = \
 "CMakeFiles/QT_Project.dir/QT_Project_autogen/mocs_compilation.cpp.o" \
-"CMakeFiles/QT_Project.dir/src2/Scoreboard.cpp.o" \
-"CMakeFiles/QT_Project.dir/src2/SpaceInvaders.cpp.o" \
+"CMakeFiles/QT_Project.dir/src2/Game.cpp.o" \
 "CMakeFiles/QT_Project.dir/src2/component.cpp.o" \
 "CMakeFiles/QT_Project.dir/src2/main.cpp.o"
 
@@ -153,8 +139,7 @@ QT_Project_OBJECTS = \
 QT_Project_EXTERNAL_OBJECTS =
 
 QT_Project: CMakeFiles/QT_Project.dir/QT_Project_autogen/mocs_compilation.cpp.o
-QT_Project: CMakeFiles/QT_Project.dir/src2/Scoreboard.cpp.o
-QT_Project: CMakeFiles/QT_Project.dir/src2/SpaceInvaders.cpp.o
+QT_Project: CMakeFiles/QT_Project.dir/src2/Game.cpp.o
 QT_Project: CMakeFiles/QT_Project.dir/src2/component.cpp.o
 QT_Project: CMakeFiles/QT_Project.dir/src2/main.cpp.o
 QT_Project: CMakeFiles/QT_Project.dir/build.make
@@ -164,7 +149,7 @@ QT_Project: /usr/lib/x86_64-linux-gnu/libQt6Core.so.6.4.2
 QT_Project: /usr/lib/x86_64-linux-gnu/libGLX.so
 QT_Project: /usr/lib/x86_64-linux-gnu/libOpenGL.so
 QT_Project: CMakeFiles/QT_Project.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/44cro/CLionProjects/QT_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable QT_Project"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable QT_Project"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/QT_Project.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -177,6 +162,6 @@ CMakeFiles/QT_Project.dir/clean:
 .PHONY : CMakeFiles/QT_Project.dir/clean
 
 CMakeFiles/QT_Project.dir/depend:
-	cd /mnt/c/Users/44cro/CLionProjects/QT_Project/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/44cro/CLionProjects/QT_Project /mnt/c/Users/44cro/CLionProjects/QT_Project /mnt/c/Users/44cro/CLionProjects/QT_Project/cmake-build-debug /mnt/c/Users/44cro/CLionProjects/QT_Project/cmake-build-debug /mnt/c/Users/44cro/CLionProjects/QT_Project/cmake-build-debug/CMakeFiles/QT_Project.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/CMakeFiles/QT_Project.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/QT_Project.dir/depend
 
