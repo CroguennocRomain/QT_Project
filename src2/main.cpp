@@ -9,6 +9,5 @@ int main(int argc, char *argv[]) {
     pGame->setFixedSize(400, 800);
     //pGame->run();
 
-
     return a.exec();
 }

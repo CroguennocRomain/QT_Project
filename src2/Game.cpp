@@ -5,6 +5,54 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /* #-------------------------------------------------------------#
+   #---# Classe MainMenu #---------------------------------------#
+   #-------------------------------------------------------------# */
+
+MainMenu* MainMenu::instance = nullptr;
+
+MainMenu::MainMenu(QWidget* parent) : QWidget(parent) {
+    QVBoxLayout* layout = new QVBoxLayout();
+
+    setCursor(Qt::PointingHandCursor);
+    setFixedSize(400, 400);
+
+    // Création du bouton pour démarrer le jeu
+    QPushButton* playButton = new QPushButton("Jouer");
+    connect(playButton, &QPushButton::clicked, this, &MainMenu::startGame);
+
+    layout->addWidget(playButton);
+    setLayout(layout);
+
+    if (instance != nullptr) {
+        delete instance;
+    }
+
+    instance = this;
+}
+
+MainMenu* MainMenu::getInstance(QWidget* parent) {
+    if (instance == nullptr) {
+        instance = new MainMenu(parent);
+    }
+    return instance;
+}
+
+void MainMenu::startGame() {
+    // Lorsque le bouton "Jouer" est cliqué, ouvre la fenêtre du jeu
+    Game* game = new Game();
+    game->show();
+    game->setFixedSize(400, 800);
+    game->run();
+
+    // Ferme le menu principal
+    close();
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/* #-------------------------------------------------------------#
    #---# Classe Game #-------------------------------------------#
    #-------------------------------------------------------------# */
 
@@ -39,8 +87,7 @@ Game::~Game() {
     delete this->timer;
     delete this->spawnTimer;
     delete this->myPlayer;
-    delete this->scene();
-
+    delete this->playerPoints;
 }
 
 /* <-__---__---__---__---__--- Méthodes ---__---__---__---__--- -> */
@@ -93,6 +140,15 @@ void Game::isOver(){
     }
 }
 
+/* <>---< Redirection vers le menu principal >---<> */
+void Game::showMainMenu(){
+    MainMenu* mainMenu = new MainMenu();
+    mainMenu->show();
+
+    // Ferme la fenêtre du jeu
+    close();
+}
+
 /* <-__---__---__---__---__--- Slots ---__---__---__---__--- -> */
 /* <>---< Gestion de la création des ennemis >---<> */
 void Game::onCreateEnemy(){
@@ -130,7 +186,10 @@ void Game::onDecreaseHealth(){
 /* <>---< Gestion de la fin du jeu >---<> */
 void Game::onGameOver(){
     // TODO : Permettre au joueur d'entrer son nom, le stocker, afficher les meilleurs scores enregistrer et pouvoir relancer une partie
-     close();
+    MainMenu* mainMenu = MainMenu::getInstance();
+    mainMenu->show();
+
+    close();
 }
 
 /* <>---< Gestion des animations >---<> */

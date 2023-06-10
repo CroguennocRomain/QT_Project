@@ -19,6 +19,10 @@
 #include <QGraphicsView>
 #include <QKeyEvent>
 
+#include <QWidget>
+#include <QPushButton>
+#include <QVBoxLayout>
+
 #include <QApplication>
 #include <QMainWindow>
 enum class Color {
