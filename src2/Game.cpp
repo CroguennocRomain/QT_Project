@@ -4,6 +4,11 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+/* #-------------------------------------------------------------#
+   #---# Classe Scoreboard #-------------------------------------#
+   #-------------------------------------------------------------# */
+
+/* <-__---__---__---__---__--- Constructeur ---__---__---__---__--- -> */
 Scoreboard::Scoreboard(QWidget* parent) : QGraphicsView(parent) {
     QGraphicsScene* pScene = new QGraphicsScene();
     setScene(pScene);
@@ -54,14 +59,18 @@ Scoreboard::Scoreboard(QWidget* parent) : QGraphicsView(parent) {
 
     tableWidget->resizeColumnsToContents();
 }
+
+/* <-__---__---__---__---__--- Destructeur ---__---__---__---__--- -> */
+Scoreboard::~Scoreboard() {
+    delete this->tableWidget;
+}
+
 void Scoreboard::drawBackground(QPainter *painter, const QRectF &rect) {
     // Fonction du TP4 qui permet de dessiner l'image de fond
     Q_UNUSED(rect);
     painter->drawPixmap(QRectF(0,0,background.width(), background.height()), background, sceneRect());
 }
-Scoreboard::~Scoreboard() {
-    delete this->tableWidget;
-}
+
 
 
 
