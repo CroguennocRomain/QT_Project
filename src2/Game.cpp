@@ -34,6 +34,15 @@ Game::Game(QWidget* parent) : QGraphicsView(parent) {
 
 }
 
+/* <-__---__---__---__---__--- Destructeur ---__---__---__---__--- -> */
+Game::~Game() {
+    delete this->timer;
+    delete this->spawnTimer;
+    delete this->myPlayer;
+    delete this->scene();
+
+}
+
 /* <-__---__---__---__---__--- Méthodes ---__---__---__---__--- -> */
 /* <>---< Création de l'image de fond >---<> */
 void Game::drawBackground(QPainter *painter, const QRectF &rect) {

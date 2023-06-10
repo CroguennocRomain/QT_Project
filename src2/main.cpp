@@ -10,7 +10,5 @@ int main(int argc, char *argv[]) {
     pGame->run();
 
 
-
-
     return a.exec();
 }
