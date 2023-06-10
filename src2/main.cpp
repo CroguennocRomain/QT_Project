@@ -1,13 +1,13 @@
 #include "Game.h"
-
+#include "Scoreboard.h"
 int main(int argc, char *argv[]) {
     QApplication a(argc, argv);
-
-    Game* pGame = new Game();
+    Scoreboard* pGame = new Scoreboard();
+    //Game* pGame = new Game();
     pGame->show();
     // Avoir la fenetre d'une taille précise
     pGame->setFixedSize(400, 800);
-    pGame->run();
+    //pGame->run();
 
 
     return a.exec();

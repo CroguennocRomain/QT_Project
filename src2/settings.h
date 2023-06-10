@@ -9,7 +9,9 @@
 #include <QGraphicsSimpleTextItem>
 #include <QKeyEvent>
 #include <QTableWidget>
-
+#include <QTableWidgetItem>
+#include <QLabel>
+#include <QVBoxLayout>
 #include <QTimer>
 #include <QGraphicsScene>
 
@@ -18,7 +20,7 @@
 #include <QKeyEvent>
 
 #include <QApplication>
-
+#include <QMainWindow>
 enum class Color {
     Pink, Blue, Red,
 };

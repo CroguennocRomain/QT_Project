@@ -1,5 +1,5 @@
-#ifndef TEST_Game_H
-#define TEST_Game_H
+#ifndef TEST_GAME_H
+#define TEST_GAME_H
 
 #include "component.h"
 
