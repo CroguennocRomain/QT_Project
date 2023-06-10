@@ -11,8 +11,8 @@
 /* <-__---__---__---__---__--- Constructeur ---__---__---__---__--- -> */
 ButtonPanel::ButtonPanel(QWidget *parent) : QWidget(parent) {
     /* <>---< Création des bouttons >---<> */
-    startButton = new QPushButton("Start", this);
-    quitButton = new QPushButton("Quit", this);
+    startButton = new QPushButton("Jouer", this);
+    quitButton = new QPushButton("Quitter", this);
     textInput = new QLineEdit(this);
 
     /* <>---< Création du layout >---<> */
