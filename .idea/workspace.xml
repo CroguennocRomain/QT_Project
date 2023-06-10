@@ -21,15 +21,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d52fe08f-01de-42b1-aac4-cb9240af25e9" name="Changes" comment="scoreboard">
-      <change afterPath="$PROJECT_DIR$/src2/MainMenu.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src2/MainMenu.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_06_2023_15_06__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_06_2023_15_06__Changes_.xml" afterDir="false" />
+    <list default="true" id="d52fe08f-01de-42b1-aac4-cb9240af25e9" name="Changes" comment="Rename des bouttons mainMenu">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src2/Game.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src2/Game.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src2/Game.h" beforeDir="false" afterPath="$PROJECT_DIR$/src2/Game.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src2/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src2/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src2/settings.h" beforeDir="false" afterPath="$PROJECT_DIR$/src2/settings.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/score.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/score.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,10 +62,16 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;structure.view.defaults.are.configured&quot;: &quot;true&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mpait\OneDrive\Bureau\COURS\CPP\Qt\QT_Project\data" />
+    </key>
+  </component>
   <component name="RunManager" selected="CMake Application.QT_Project">
     <configuration name="QT_Project" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="QT_Project" TARGET_NAME="QT_Project" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="QT_Project" RUN_TARGET_NAME="QT_Project">
       <method v="2">
@@ -107,6 +107,8 @@
       <workItem from="1686083113338" duration="598000" />
       <workItem from="1686232517453" duration="15181000" />
       <workItem from="1686411211603" duration="6000" />
+      <workItem from="1686421979351" duration="37000" />
+      <workItem from="1686422026935" duration="1000" />
     </task>
     <task id="LOCAL-00001" summary="scoreboard">
       <created>1686408174260</created>
@@ -122,7 +124,28 @@
       <option name="project" value="LOCAL" />
       <updated>1686408201999</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Il n'y a plus de fenetres qui s'ouvrent à l'infini !!!!">
+      <created>1686414862661</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1686414862661</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Ajout de l'écriture du CSV et d'un menu bar au menu principal">
+      <created>1686420710383</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1686420710383</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Rename des bouttons mainMenu">
+      <created>1686420799933</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1686420799933</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,6 +170,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="scoreboard" />
-    <option name="LAST_COMMIT_MESSAGE" value="scoreboard" />
+    <MESSAGE value="Il n'y a plus de fenetres qui s'ouvrent à l'infini !!!!" />
+    <MESSAGE value="Ajout de l'écriture du CSV et d'un menu bar au menu principal" />
+    <MESSAGE value="Rename des bouttons mainMenu" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rename des bouttons mainMenu" />
   </component>
 </project>
