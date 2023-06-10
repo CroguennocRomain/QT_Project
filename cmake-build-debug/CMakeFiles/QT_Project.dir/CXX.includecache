@@ -6,6 +6,28 @@
 
 #IncludeRegexTransform: 
 
+/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/QT_Project_autogen/UPF6SLKEHD/moc_Game.cpp
+memory
+-
+../../../src2/Game.h
+/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src2/Game.h
+QtCore/qmetatype.h
+-
+
+/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/QT_Project_autogen/UPF6SLKEHD/moc_component.cpp
+memory
+-
+../../../src2/component.h
+/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src2/component.h
+QtCore/qmetatype.h
+-
+
+/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/QT_Project_autogen/mocs_compilation.cpp
+UPF6SLKEHD/moc_Game.cpp
+/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/QT_Project_autogen/UPF6SLKEHD/moc_Game.cpp
+UPF6SLKEHD/moc_component.cpp
+/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/QT_Project_autogen/UPF6SLKEHD/moc_component.cpp
+
 /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src2/Game.cpp
 Game.h
 /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src2/Game.h
@@ -17,6 +39,10 @@ component.h
 /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src2/component.h
 settings.h
 /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src2/settings.h
+
+/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src2/main.cpp
+Game.h
+/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src2/Game.h
 
 /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src2/settings.h
 iostream

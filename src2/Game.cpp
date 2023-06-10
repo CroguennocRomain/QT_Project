@@ -176,6 +176,18 @@ void Game::update() {
         }
     }
 
+    /* <>---< Gestion du spawn des aliens >---<> */
+    // Plus le score augmente, plus les aliens arrivent souvent
+    // pour chaques valeurs du QVector, on augmente le spawnSpacing
+    for (int i = 0; i < spaceSwpan.size(); i++) {
+        if (!spaceSwpan[i] && playerPoints->getScore() >= (i+1)*1500) {
+            spaceSwpan[i] = true;
+            spawnSpacing -= 175;
+            break;
+        }
+    }
+
+
 }
 
 /* <-__---__---__---__---__--- Events ---__---__---__---__--- -> */

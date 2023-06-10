@@ -15,19 +15,20 @@ class Game : public QGraphicsView {
 private:
 /* <-__---__---__---__---__--- Attributs ---__---__---__---__--- -> */
 /* <>---< Gestion de la scène et du jeu >---<> */
-    QPixmap    background;
-    QTimer*    timer;
-    QTimer*    spawnTimer;
-    int        m_Scrolling = ScrollingSpeed;
-    int        spawnSpacing = 2000;
+    QPixmap       background;
+    QTimer*       timer;
+    QTimer*       spawnTimer;
+    int           m_Scrolling = ScrollingSpeed;
+    int           spawnSpacing = 3000;
+    QVector<bool> spaceSwpan = {false, false, false, false, false, false, false, false, false, false};
 
 /* <>---< Gestion des composants >---<> */
-    Player*    myPlayer = nullptr;
-    Points*    playerPoints = nullptr;
+    Player*       myPlayer = nullptr;
+    Points*       playerPoints = nullptr;
 
 /* <>---< Gestion des déplacements >---<> */
-    bool       isMovingLeft = false;
-    bool       isMovingRight = false;
+    bool          isMovingLeft = false;
+    bool          isMovingRight = false;
 
 public:
 /* <-__---__---__---__---__--- Constructeur ---__---__---__---__--- -> */
