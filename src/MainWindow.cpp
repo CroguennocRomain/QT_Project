@@ -47,12 +47,10 @@ void MainWindow::slot_aboutMenu(){
 void MainWindow::slot_commandeMenu() {
     QMessageBox msgBox;
     msgBox.setWindowTitle("Commandes");
-    msgBox.setInformativeText("Z : avancer vers le haut\n"
-                              "Q : avancer vers la gauche\n"
-                              "S : avancer vers le bas\n"
-                              "D : avancer vers la droite\n\n"
+    msgBox.setInformativeText("Q : Avancer vers la gauche\n"
+                              "S : Avancer vers le bas\n"
 
-                              "P : mettre / enlever le jeu en pause\n");
+                              "ESPACE : Tirer un missile\n");
     msgBox.setModal(true); // on souhaite que la fenetre soit modale i.e qu'on ne puisse plus cliquer ailleurs
     msgBox.exec();
 }
@@ -61,10 +59,11 @@ void MainWindow::slot_reglesMenu() {
     QMessageBox msgBox;
     msgBox.setWindowTitle("Regles");
     msgBox.setInformativeText("Le but du jeu est de tuer les aliens qui envahissent l'espace !\n"
-                              "Pour cela, il faut les toucher avec des missiles.\n"
-                              "Trois coups sur le vaisseau et il est détruit !\n"
+                              "Pour cela, il faut les toucher avec vos missiles.\n"
+                              "Si votre vaisseau est touché une fois ou si la Terre que vous venez de quitter est attaquée trois fois c'est la fin de l'aventure !\n"
                               "ATTENTION AUX ASTEROIDES !!\n\n"
-                              "Bonne chance !\n");
+                              "N'oubliez pas d'entrer votre nom dans le champ de texte à côter du bouton 'Jouer'.\n"
+                              "Bonne chance soldat !!\n");
     msgBox.setModal(true); // on souhaite que la fenetre soit modale i.e qu'on ne puisse plus cliquer ailleurs
     msgBox.exec();
 }

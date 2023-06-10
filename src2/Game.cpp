@@ -10,16 +10,26 @@
 
 /* <-__---__---__---__---__--- Constructeur ---__---__---__---__--- -> */
 ButtonPanel::ButtonPanel(QWidget *parent) : QWidget(parent) {
-    // Création des boutons
+    /* <>---< Création des bouttons >---<> */
     startButton = new QPushButton("Start", this);
     quitButton = new QPushButton("Quit", this);
+    textInput = new QLineEdit(this);
 
-    // Création du layout
+    /* <>---< Création du layout >---<> */
     QHBoxLayout *layout = new QHBoxLayout(this);
+
+    layout->addWidget(textInput);
     layout->addWidget(startButton);
     layout->addWidget(quitButton);
 
-    // Connexion des signaux et des slots
+    setLayout(layout);
+
+    /* <>---< Connexion des bouttons >---<> */
+    connect(startButton, &QPushButton::clicked, this, [=]() {
+        // Récupérer le texte saisi
+        playerName = textInput->text();
+
+    });
     QObject::connect(startButton, SIGNAL(clicked()), parent, SLOT(startGame()));
     QObject::connect(quitButton, SIGNAL(clicked()), parent, SLOT(close()));
 }
@@ -28,6 +38,11 @@ ButtonPanel::ButtonPanel(QWidget *parent) : QWidget(parent) {
 ButtonPanel::~ButtonPanel() {
     delete startButton;
     delete quitButton;
+}
+
+/* <-__---__---__---__---__--- Getters ---__---__---__---__--- -> */
+QString ButtonPanel::getPlayerName() const {
+    return playerName;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -40,14 +55,13 @@ ButtonPanel::~ButtonPanel() {
 
 /* <-__---__---__---__---__--- Constructeur ---__---__---__---__--- -> */
 Scoreboard::Scoreboard(QWidget* parent) : QGraphicsView(parent) {
+    /* <>---< Création de la scène >---<> */
     QGraphicsScene* pScene = new QGraphicsScene();
     setScene(pScene);
     //donner un nom à la page
     setWindowTitle("Tableau de scores");
     pScene->setSceneRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 
-    //this->background.load("../img/space-invader.jpg");
-    //this->setSceneRect(0,0, background.width(), background.height());
 
     QWidget* centralWidget = new QWidget(this);
     //setCentralWidget(centralWidget);
@@ -110,33 +124,81 @@ void Scoreboard::drawBackground(QPainter *painter, const QRectF &rect) {
    #-------------------------------------------------------------# */
 
 MainMenu::MainMenu(QWidget* parent) : QWidget(parent) {
-    QVBoxLayout* layout = new QVBoxLayout();
-
+    /* <>---< Création des paramètres de la fenêtre >---<> */
+    this->setWindowTitle("Invasion des aliens - Menu principal");
     setCursor(Qt::PointingHandCursor);
     setFixedSize(400, 400);
 
+    /* <>---< Création du menu bar >---<> */
+    QMenuBar* menuBar = new QMenuBar(this);
+
+    QMenu* menu = menuBar->addMenu(tr("&Informations"));
+    // Création des actions du menu
+    QAction* actionHelp = new QAction(tr("&A propos"), this);
+    connect(actionHelp, SIGNAL(triggered()), this, SLOT(slot_aboutMenu()));
+    QAction* actionCommande = new QAction(tr("&Commandes"), this);
+    connect(actionCommande, SIGNAL(triggered()), this, SLOT(slot_commandeMenu()));
+    QAction* actionRegles = new QAction(tr("&Regles"), this);
+    connect(actionRegles, SIGNAL(triggered()), this, SLOT(slot_reglesMenu()));
+    // Ajout des actions au menu
+    menu->addAction(actionHelp);
+    menu->addAction(actionCommande);
+    menu->addAction(actionRegles);
+    /* <>---< Création du layout >---<> */
+    QVBoxLayout* layout = new QVBoxLayout();
+    // Ajout du menu bar
+    layout->setMenuBar(menuBar);
     // Création du tableau des scores
     this->scoreboard = new Scoreboard(this);
     layout->addWidget(scoreboard);
-
     // Ajout des boutons
     this->buttonPanel = new ButtonPanel(this);
     layout->addWidget(buttonPanel);
 
     setLayout(layout);
-
 }
-
 
 void MainMenu::startGame() {
     // Lorsque le bouton "Jouer" est cliqué, ouvre la fenêtre du jeu
-    Game* game = new Game();
+    Game* game = new Game(this->buttonPanel->getPlayerName());
     game->show();
     game->setFixedSize(400, 800);
     game->run();
 
     // Ferme le menu principal
     this->close();
+}
+
+void MainMenu::slot_aboutMenu(){
+    QMessageBox msgBox;
+    msgBox.setWindowTitle("A propos");
+    msgBox.setText("Un petit projet de C++/Qt créé par PAITIER Mathias et CROGUENNOC Romain.");
+    msgBox.setModal(true); // on souhaite que la fenetre soit modale i.e qu'on ne puisse plus cliquer ailleurs
+    msgBox.exec();
+}
+
+void MainMenu::slot_commandeMenu() {
+    QMessageBox msgBox;
+    msgBox.setWindowTitle("Commandes");
+    msgBox.setInformativeText("Q : Avancer vers la gauche\n"
+                              "S : Avancer vers le bas\n"
+
+                              "ESPACE : Tirer un missile\n");
+    msgBox.setModal(true); // on souhaite que la fenetre soit modale i.e qu'on ne puisse plus cliquer ailleurs
+    msgBox.exec();
+}
+
+void MainMenu::slot_reglesMenu() {
+    QMessageBox msgBox;
+    msgBox.setWindowTitle("Regles");
+    msgBox.setInformativeText("Le but du jeu est de tuer les aliens qui envahissent l'espace !\n\n"
+                              "Pour cela, il faut les toucher avec vos missiles.\n"
+                              "Si votre vaisseau est touché une fois ou si la Terre que vous venez de quitter est attaquée trois fois c'est la fin de l'aventure !\n"
+                              "ATTENTION AUX ASTEROIDES !!\n\n"
+                              "N'oubliez pas d'entrer votre nom dans le champ de texte à côter du bouton 'Jouer'.\n"
+                              "Bonne chance soldat !!\n");
+    msgBox.setModal(true); // on souhaite que la fenetre soit modale i.e qu'on ne puisse plus cliquer ailleurs
+    msgBox.exec();
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -148,7 +210,10 @@ void MainMenu::startGame() {
    #-------------------------------------------------------------# */
 
 /* <-__---__---__---__---__--- Constructeur ---__---__---__---__--- -> */
-Game::Game(QWidget* parent) : QGraphicsView(parent) {
+Game::Game(QString playerName, QWidget* parent) : QGraphicsView(parent) {
+    this->playerName = playerName;
+
+    this->setWindowTitle("Invasion des aliens");
     // Pour que chaque partie soit aléatoire
     std::srand(time(0));
     /* <>---< Création de la scene >---<> */
@@ -231,6 +296,20 @@ void Game::isOver(){
     }
 }
 
+/* <>---< Ajout de données dans le CSV >---<> */
+void Game::addDataToCSV(QString playerName, int score) {
+// On ouvre le fichier CSV
+    QFile file("../data/score.csv");
+    // On vérifie que le fichier est bien ouvert
+    if (!file.open(QIODevice::Append | QIODevice::Text))
+        return;
+
+    // On écrit les données dans le fichier
+    QTextStream out(&file);
+    out << playerName << "," << score << "\n";
+    file.close();
+}
+
 /* <-__---__---__---__---__--- Slots ---__---__---__---__--- -> */
 /* <>---< Gestion de la création des ennemis >---<> */
 void Game::onCreateEnemy(){
@@ -245,7 +324,7 @@ void Game::onCreateEnemy(){
         int nColor = rand() % 3;
         // Création de l'alien, sa position est en dehors de l'écran (au dessus)
         Alien* pAlien = new Alien(static_cast<Color>(nColor));
-        pAlien->setPos(nPos, this->myPlayer->y() - 800);
+        pAlien->setPos(nPos, this->myPlayer->y() - 700);
         // On ajoute l'alien à la scene
         scene()->addItem(pAlien);
         // On connecte l'alien aux conditions de défaite
@@ -268,7 +347,9 @@ void Game::onDecreaseHealth(){
 
 /* <>---< Gestion de la fin du jeu >---<> */
 void Game::onGameOver(){
-    // TODO : Permettre au joueur d'entrer son nom, le stocker, afficher les meilleurs scores enregistrer et pouvoir relancer une partie
+    // Ecriture du score dans le fichier
+    addDataToCSV(playerName, playerPoints->getScore());
+
     // On fait comme dans un destructeur sinon d'autres fenetres se créent en boucle
     this->over = true;
     delete this->timer;
@@ -342,7 +423,7 @@ void Game::update() {
     for (int i = 0; i < spaceSwpan.size(); i++) {
         if (!spaceSwpan[i] && playerPoints->getScore() >= (i+1)*1500) {
             spaceSwpan[i] = true;
-            spawnSpacing -= 175;
+            spawnSpacing -= 100;
             break;
         }
     }
@@ -353,22 +434,6 @@ void Game::update() {
 /* <-__---__---__---__---__--- Events ---__---__---__---__--- -> */
 /* <>---< Gestion des évènements clavier >---<> */
 void Game::keyPressEvent(QKeyEvent* event) {
-    // Faire pause avec possibilité de reprendre
-    if (event->key() == Qt::Key_P) {
-
-        if (this->timer->isActive()) {
-            // TODO : Afficher un menu de pause
-            this->timer->stop();
-            this->spawnTimer->stop();
-            this->isMovingLeft = false;
-            this->isMovingRight = false;
-        }
-
-        else {
-            this->spawnTimer->start();
-            this->timer->start();
-        }
-    }
 
     // Si le jeu n'est pas en pause on peut donc jouer
     if (this->timer->isActive()) {
@@ -406,64 +471,4 @@ void Game::keyReleaseEvent(QKeyEvent *event) {
         }
 
     }
-}
-
-//(-----------------------------------------Scoreboard-----------------------------------------)
-Scoreboard::Scoreboard(QWidget* parent) : QGraphicsView(parent) {
-    QGraphicsScene* pScene = new QGraphicsScene();
-    setScene(pScene);
-    //donner un nom à la page
-    setWindowTitle("Tableau de scores");
-    pScene->setSceneRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-
-    //this->background.load("../img/space-invader.jpg");
-    //this->setSceneRect(0,0, background.width(), background.height());
-
-    QWidget* centralWidget = new QWidget(this);
-    //setCentralWidget(centralWidget);
-
-    QVBoxLayout* layout = new QVBoxLayout(centralWidget);
-
-    tableWidget = new QTableWidget(this);
-    tableWidget->setRowCount(5);
-    tableWidget->setColumnCount(1);
-    tableWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-
-    layout->addWidget(tableWidget);
-    bestScoreLabel = new QLabel(this);
-    bestScoreLabel->setText("Meilleur score : 0");
-    bestScoreLabel->setAlignment(Qt::AlignCenter);
-    layout->addWidget(bestScoreLabel);
-
-
-    QStringList headerLabels;
-    headerLabels << "Score";
-    tableWidget->setHorizontalHeaderLabels(headerLabels);
-
-    QList<int> scores;
-    scores << 100 << 200 << 150 << 120 << 180;
-
-    int bestScore = 0;
-
-    for (int row = 0; row < scores.size(); ++row) {
-        int score = scores[row];
-        QTableWidgetItem* item = new QTableWidgetItem(QString::number(score));
-        tableWidget->setItem(row, 0, item);
-
-        if (score > bestScore) {
-            bestScore = score;
-        }
-    }
-
-    bestScoreLabel->setText("Meilleur score : " + QString::number(bestScore));
-
-    tableWidget->resizeColumnsToContents();
-}
-void Scoreboard::drawBackground(QPainter *painter, const QRectF &rect) {
-    // Fonction du TP4 qui permet de dessiner l'image de fond
-    Q_UNUSED(rect);
-    painter->drawPixmap(QRectF(0,0,background.width(), background.height()), background, sceneRect());
-}
-Scoreboard::~Scoreboard() {
-    delete this->tableWidget;
 }

@@ -2,29 +2,9 @@
 #define TEST_SETTINGS_H
 
 #include <iostream>
-#include <QSize>
 
-#include <QGraphicsPixmapItem>
-#include <QGraphicsItem>
-#include <QGraphicsSimpleTextItem>
-#include <QKeyEvent>
-#include <QTableWidget>
-#include <QTableWidgetItem>
-#include <QLabel>
-#include <QVBoxLayout>
-#include <QTimer>
-#include <QGraphicsScene>
+#include <QtWidgets>
 
-#include <QPointer>
-#include <QGraphicsView>
-#include <QKeyEvent>
-
-#include <QWidget>
-#include <QPushButton>
-#include <QVBoxLayout>
-
-#include <QApplication>
-#include <QMainWindow>
 enum class Color {
     Pink, Blue, Red,
 };

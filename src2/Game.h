@@ -20,10 +20,15 @@ public:
 /* <-__---__---__---__---__--- Destructeur ---__---__---__---__--- -> */
     ~ButtonPanel();
 
+/* <-__---__---__---__---__--- Getters ---__---__---__---__--- -> */
+    QString getPlayerName() const;
+
 private:
 /* <-__---__---__---__---__--- Attributs ---__---__---__---__--- -> */
     QPushButton *startButton;
     QPushButton *quitButton;
+    QLineEdit   *textInput;
+    QString     playerName;
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -52,7 +57,6 @@ public:
     /* <-__---__---__---__---__--- Destructeur ---__---__---__---__--- -> */
     virtual ~Scoreboard();
 
-    /* <-__---__---__---__---__--- Méthodes ---__---__---__---__--- -> */
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -69,11 +73,17 @@ public:
     MainMenu(QWidget* parent = nullptr);
 
 private:
-    ButtonPanel* buttonPanel;
-    Scoreboard* scoreboard;
+    ButtonPanel*  buttonPanel;
+    Scoreboard*   scoreboard;
 
 public slots:
+/* <-__---__---__---__---__--- Slots ---__---__---__---__--- -> */
+/* <>---< Gestion du jeu >---<> */
     void startGame();
+/* <>---< Gestion des menus >---<> */
+    void slot_aboutMenu();
+    void slot_commandeMenu();
+    void slot_reglesMenu();
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -92,9 +102,10 @@ private:
     QTimer*       timer;
     QTimer*       spawnTimer;
     int           m_Scrolling = ScrollingSpeed;
-    int           spawnSpacing = 3000;
+    int           spawnSpacing = 1500;
     bool          over = false;
     QVector<bool> spaceSwpan = {false, false, false, false, false, false, false, false, false, false};
+    QString       playerName;
 
 /* <>---< Gestion des composants >---<> */
     Player*       myPlayer = nullptr;
@@ -106,7 +117,7 @@ private:
 
 public:
 /* <-__---__---__---__---__--- Constructeur ---__---__---__---__--- -> */
-    Game(QWidget* parent = nullptr);
+    Game(QString playerName, QWidget* parent = nullptr);
 
 /* <-__---__---__---__---__--- Destructeur ---__---__---__---__--- -> */
     ~Game();
@@ -115,6 +126,7 @@ public:
     void drawBackground(QPainter* painter, const QRectF& rect) override;
     void run();
     void isOver();
+    void addDataToCSV(QString playerName, int score);
 
 protected:
 /* <-__---__---__---__---__--- Events ---__---__---__---__--- -> */
@@ -134,28 +146,5 @@ public slots:
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-/* #-------------------------------------------------------------#
-   #---# Classe GameOver #---------------------------------------#
-   #-------------------------------------------------------------# */
-class Scoreboard : public QGraphicsView {
-Q_OBJECT
-
-private:
-    QPixmap background;
-    QTableWidget* tableWidget;
-    QLabel* bestScoreLabel;
-
-public:
-
-
-    /* <-__---__---__---__---__--- Constructeur ---__---__---__---__--- -> */
-    Scoreboard(QWidget* parent = nullptr);
-    void drawBackground(QPainter* painter, const QRectF& rect);
-    /* <-__---__---__---__---__--- Destructeur ---__---__---__---__--- -> */
-    virtual ~Scoreboard();
-
-    /* <-__---__---__---__---__--- Méthodes ---__---__---__---__--- -> */
-};
 
 #endif //TEST_Game_H
