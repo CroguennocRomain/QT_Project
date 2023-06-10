@@ -8,6 +8,29 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /* #-------------------------------------------------------------#
+   #---# Classe ButtonPanel #------------------------------------#
+   #-------------------------------------------------------------# */
+
+class ButtonPanel : public QWidget {
+Q_OBJECT
+public:
+/* <-__---__---__---__---__--- Constructeur ---__---__---__---__--- -> */
+    ButtonPanel(QWidget *parent = nullptr);
+
+/* <-__---__---__---__---__--- Destructeur ---__---__---__---__--- -> */
+    ~ButtonPanel();
+
+private:
+/* <-__---__---__---__---__--- Attributs ---__---__---__---__--- -> */
+    QPushButton *startButton;
+    QPushButton *quitButton;
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/* #-------------------------------------------------------------#
    #---# Classe Scoreboard #-------------------------------------#
    #-------------------------------------------------------------# */
 
@@ -45,10 +68,9 @@ Q_OBJECT
 public:
     MainMenu(QWidget* parent = nullptr);
 
-    static MainMenu* getInstance(QWidget* parent = nullptr);
-
 private:
-    static MainMenu* instance;
+    ButtonPanel* buttonPanel;
+    Scoreboard* scoreboard;
 
 public slots:
     void startGame();
@@ -71,6 +93,7 @@ private:
     QTimer*       spawnTimer;
     int           m_Scrolling = ScrollingSpeed;
     int           spawnSpacing = 3000;
+    bool          over = false;
     QVector<bool> spaceSwpan = {false, false, false, false, false, false, false, false, false, false};
 
 /* <>---< Gestion des composants >---<> */
@@ -92,7 +115,6 @@ public:
     void drawBackground(QPainter* painter, const QRectF& rect) override;
     void run();
     void isOver();
-    void showMainMenu();
 
 protected:
 /* <-__---__---__---__---__--- Events ---__---__---__---__--- -> */

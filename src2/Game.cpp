@@ -5,6 +5,36 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /* #-------------------------------------------------------------#
+   #---# Classe ButtonPanel #------------------------------------#
+   #-------------------------------------------------------------# */
+
+/* <-__---__---__---__---__--- Constructeur ---__---__---__---__--- -> */
+ButtonPanel::ButtonPanel(QWidget *parent) : QWidget(parent) {
+    // Création des boutons
+    startButton = new QPushButton("Start", this);
+    quitButton = new QPushButton("Quit", this);
+
+    // Création du layout
+    QHBoxLayout *layout = new QHBoxLayout(this);
+    layout->addWidget(startButton);
+    layout->addWidget(quitButton);
+
+    // Connexion des signaux et des slots
+    QObject::connect(startButton, SIGNAL(clicked()), parent, SLOT(startGame()));
+    QObject::connect(quitButton, SIGNAL(clicked()), parent, SLOT(close()));
+}
+
+/* <-__---__---__---__---__--- Destructeur ---__---__---__---__--- -> */
+ButtonPanel::~ButtonPanel() {
+    delete startButton;
+    delete quitButton;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/* #-------------------------------------------------------------#
    #---# Classe Scoreboard #-------------------------------------#
    #-------------------------------------------------------------# */
 
@@ -71,9 +101,6 @@ void Scoreboard::drawBackground(QPainter *painter, const QRectF &rect) {
     painter->drawPixmap(QRectF(0,0,background.width(), background.height()), background, sceneRect());
 }
 
-
-
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -82,34 +109,24 @@ void Scoreboard::drawBackground(QPainter *painter, const QRectF &rect) {
    #---# Classe MainMenu #---------------------------------------#
    #-------------------------------------------------------------# */
 
-MainMenu* MainMenu::instance = nullptr;
-
 MainMenu::MainMenu(QWidget* parent) : QWidget(parent) {
     QVBoxLayout* layout = new QVBoxLayout();
 
     setCursor(Qt::PointingHandCursor);
     setFixedSize(400, 400);
 
-    // Création du bouton pour démarrer le jeu
-    QPushButton* playButton = new QPushButton("Jouer");
-    connect(playButton, &QPushButton::clicked, this, &MainMenu::startGame);
+    // Création du tableau des scores
+    this->scoreboard = new Scoreboard(this);
+    layout->addWidget(scoreboard);
 
-    layout->addWidget(playButton);
+    // Ajout des boutons
+    this->buttonPanel = new ButtonPanel(this);
+    layout->addWidget(buttonPanel);
+
     setLayout(layout);
 
-    if (instance != nullptr) {
-        delete instance;
-    }
-
-    instance = this;
 }
 
-MainMenu* MainMenu::getInstance(QWidget* parent) {
-    if (instance == nullptr) {
-        instance = new MainMenu(parent);
-    }
-    return instance;
-}
 
 void MainMenu::startGame() {
     // Lorsque le bouton "Jouer" est cliqué, ouvre la fenêtre du jeu
@@ -119,7 +136,7 @@ void MainMenu::startGame() {
     game->run();
 
     // Ferme le menu principal
-    close();
+    this->close();
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -214,60 +231,61 @@ void Game::isOver(){
     }
 }
 
-/* <>---< Redirection vers le menu principal >---<> */
-void Game::showMainMenu(){
-    MainMenu* mainMenu = new MainMenu();
-    mainMenu->show();
-
-    // Ferme la fenêtre du jeu
-    close();
-}
-
 /* <-__---__---__---__---__--- Slots ---__---__---__---__--- -> */
 /* <>---< Gestion de la création des ennemis >---<> */
 void Game::onCreateEnemy(){
-    // On initialise de manière aléatoire la position latérale de l'alien
-    int nPos;
-    do {
-        nPos = (rand() % SCREEN_WIDTH);
-    } while (nPos < EntitySize.width() || nPos > SCREEN_WIDTH - EntitySize.width()); // On veut que l'alien soit dans l'écran
+    if(!this->over) {
+        // On initialise de manière aléatoire la position latérale de l'alien
+        int nPos;
+        do {
+            nPos = (rand() % SCREEN_WIDTH);
+        } while (nPos < EntitySize.width() || nPos > SCREEN_WIDTH - EntitySize.width()); // On veut que l'alien soit dans l'écran
 
-    // On veut que l'alien soit de couleur aléatoire
-    int nColor = rand() % 3;
-    // Création de l'alien, sa position est en dehors de l'écran (au dessus)
-    Alien* pAlien = new Alien(static_cast<Color>(nColor));
-    pAlien->setPos(nPos, this->myPlayer->y() - 800);
-    // On ajoute l'alien à la scene
-    scene()->addItem(pAlien);
-    // On connecte l'alien aux conditions de défaite
-    connect(pAlien, &Alien::sigDecreaseHealth, this, &Game::onDecreaseHealth);
-    connect(pAlien, &Alien::sigGameOver, this, &Game::onGameOver);
+        // On veut que l'alien soit de couleur aléatoire
+        int nColor = rand() % 3;
+        // Création de l'alien, sa position est en dehors de l'écran (au dessus)
+        Alien* pAlien = new Alien(static_cast<Color>(nColor));
+        pAlien->setPos(nPos, this->myPlayer->y() - 800);
+        // On ajoute l'alien à la scene
+        scene()->addItem(pAlien);
+        // On connecte l'alien aux conditions de défaite
+        connect(pAlien, &Alien::sigDecreaseHealth, this, &Game::onDecreaseHealth);
+        connect(pAlien, &Alien::sigGameOver, this, &Game::onGameOver);
+    }
+
 }
 
 /* <>---< Gestion de l'augmentation du score >---<> */
 void Game::onIncreaseScore(){
     // TODO : Récupérer le score de l'alien pour l'ajouter au score du joueur
     playerPoints->increaseScore(50);
-    isOver();
 }
 
 /* <>---< Gestion de la diminution des PVs >---<> */
 void Game::onDecreaseHealth(){
     playerPoints->decreaseHealth();
-    isOver();
 }
 
 /* <>---< Gestion de la fin du jeu >---<> */
 void Game::onGameOver(){
     // TODO : Permettre au joueur d'entrer son nom, le stocker, afficher les meilleurs scores enregistrer et pouvoir relancer une partie
-    MainMenu* mainMenu = MainMenu::getInstance();
-    mainMenu->show();
-
+    // On fait comme dans un destructeur sinon d'autres fenetres se créent en boucle
+    this->over = true;
+    delete this->timer;
+    delete this->spawnTimer;
+    delete this->myPlayer;
+    delete this->playerPoints;
     close();
+
+    MainMenu* mainMenu = new MainMenu();
+    mainMenu->show();
 }
 
 /* <>---< Gestion des animations >---<> */
 void Game::update() {
+    /* <>---< Gestion de la fin du jeu >---<> */
+    isOver();
+
     /* <>---< On place la vue sur le joueur >---<> */
     // Le joueur est excentré de 300 pixels vers le bas pour que le joueur puisse voir les aliens arriver
     if (myPlayer != nullptr) {
