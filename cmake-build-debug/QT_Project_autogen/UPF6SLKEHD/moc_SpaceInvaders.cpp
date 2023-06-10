@@ -26,15 +26,14 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 namespace {
 struct qt_meta_stringdata_SpaceInvaders_t {
-    uint offsetsAndSizes[16];
+    uint offsetsAndSizes[14];
     char stringdata0[14];
     char stringdata1[14];
     char stringdata2[1];
     char stringdata3[16];
-    char stringdata4[16];
-    char stringdata5[17];
-    char stringdata6[11];
-    char stringdata7[7];
+    char stringdata4[17];
+    char stringdata5[11];
+    char stringdata6[7];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_SpaceInvaders_t::offsetsAndSizes) + ofs), len 
@@ -44,16 +43,14 @@ Q_CONSTINIT static const qt_meta_stringdata_SpaceInvaders_t qt_meta_stringdata_S
         QT_MOC_LITERAL(14, 13),  // "onCreateEnemy"
         QT_MOC_LITERAL(28, 0),  // ""
         QT_MOC_LITERAL(29, 15),  // "onIncreaseScore"
-        QT_MOC_LITERAL(45, 15),  // "onDecreaseScore"
-        QT_MOC_LITERAL(61, 16),  // "onDecreaseHealth"
-        QT_MOC_LITERAL(78, 10),  // "onGameOver"
-        QT_MOC_LITERAL(89, 6)   // "update"
+        QT_MOC_LITERAL(45, 16),  // "onDecreaseHealth"
+        QT_MOC_LITERAL(62, 10),  // "onGameOver"
+        QT_MOC_LITERAL(73, 6)   // "update"
     },
     "SpaceInvaders",
     "onCreateEnemy",
     "",
     "onIncreaseScore",
-    "onDecreaseScore",
     "onDecreaseHealth",
     "onGameOver",
     "update"
@@ -67,7 +64,7 @@ Q_CONSTINIT static const uint qt_meta_data_SpaceInvaders[] = {
       10,       // revision
        0,       // classname
        0,    0, // classinfo
-       6,   14, // methods
+       5,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -75,15 +72,13 @@ Q_CONSTINIT static const uint qt_meta_data_SpaceInvaders[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   50,    2, 0x0a,    1 /* Public */,
-       3,    0,   51,    2, 0x0a,    2 /* Public */,
-       4,    0,   52,    2, 0x0a,    3 /* Public */,
-       5,    0,   53,    2, 0x0a,    4 /* Public */,
-       6,    0,   54,    2, 0x0a,    5 /* Public */,
-       7,    0,   55,    2, 0x0a,    6 /* Public */,
+       1,    0,   44,    2, 0x0a,    1 /* Public */,
+       3,    0,   45,    2, 0x0a,    2 /* Public */,
+       4,    0,   46,    2, 0x0a,    3 /* Public */,
+       5,    0,   47,    2, 0x0a,    4 /* Public */,
+       6,    0,   48,    2, 0x0a,    5 /* Public */,
 
  // slots: parameters
-    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -106,8 +101,6 @@ Q_CONSTINIT const QMetaObject SpaceInvaders::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'onIncreaseScore'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'onDecreaseScore'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'onDecreaseHealth'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'onGameOver'
@@ -126,10 +119,9 @@ void SpaceInvaders::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         switch (_id) {
         case 0: _t->onCreateEnemy(); break;
         case 1: _t->onIncreaseScore(); break;
-        case 2: _t->onDecreaseScore(); break;
-        case 3: _t->onDecreaseHealth(); break;
-        case 4: _t->onGameOver(); break;
-        case 5: _t->update(); break;
+        case 2: _t->onDecreaseHealth(); break;
+        case 3: _t->onGameOver(); break;
+        case 4: _t->update(); break;
         default: ;
         }
     }
@@ -155,13 +147,13 @@ int SpaceInvaders::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 6)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 6;
+        _id -= 5;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 6)
+        if (_id < 5)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 6;
+        _id -= 5;
     }
     return _id;
 }

@@ -3,15 +3,14 @@
 
 #include "component.h"
 
-#include <QPointer>
-#include <QGraphicsView>
-#include <QKeyEvent>
-
 class SpaceInvaders : public QGraphicsView {
 Q_OBJECT
 public:
     SpaceInvaders(QWidget* parent = nullptr);
 
+    void paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*);
+
+    void drawBackground(QPainter* painter, const QRectF& rect);
     void run();
     void checkPoints();
 
@@ -22,21 +21,21 @@ protected:
 public slots:
     void onCreateEnemy();
     void onIncreaseScore();
-    void onDecreaseScore();
     void onDecreaseHealth();
     void onGameOver();
 
     void update();
 
 private:
+    QPixmap    background;
     QTimer*    timer;
     QTimer*    spawnTimer;
-    Cannon*    m_pCannon = nullptr;
-    Points*    m_pPoints = nullptr;
+    Player*    myPlayer = nullptr;
+    Points*    playerPoints = nullptr;
+    int        m_Scrolling = ScrollingSpeed;
+    int        m_BackgroundPosY = 0;
 
     /* Paramètres de gestion des déplacement */
-    bool isMovingUp = false;
-    bool isMovingDown = false;
     bool isMovingLeft = false;
     bool isMovingRight = false;
 };

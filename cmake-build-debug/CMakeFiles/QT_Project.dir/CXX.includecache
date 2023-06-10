@@ -6,47 +6,23 @@
 
 #IncludeRegexTransform: 
 
-/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/QT_Project_autogen/UPF6SLKEHD/moc_SpaceInvaders.cpp
-memory
--
-../../../src2/SpaceInvaders.h
-/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src2/SpaceInvaders.h
-QtCore/qmetatype.h
--
-
-/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/QT_Project_autogen/UPF6SLKEHD/moc_component.cpp
-memory
--
-../../../src2/component.h
-/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src2/component.h
-QtCore/qmetatype.h
--
-
-/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/QT_Project_autogen/mocs_compilation.cpp
-UPF6SLKEHD/moc_SpaceInvaders.cpp
-/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/QT_Project_autogen/UPF6SLKEHD/moc_SpaceInvaders.cpp
-UPF6SLKEHD/moc_component.cpp
-/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/cmake-build-debug/QT_Project_autogen/UPF6SLKEHD/moc_component.cpp
-
 /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src2/SpaceInvaders.cpp
 SpaceInvaders.h
 /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src2/SpaceInvaders.h
-QTimer
--
 
 /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src2/SpaceInvaders.h
 component.h
 /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src2/component.h
-QPointer
--
-QGraphicsView
--
-QKeyEvent
--
 
 /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src2/component.h
 settings.h
 /mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src2/settings.h
+
+/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src2/settings.h
+iostream
+-
+QSize
+-
 QGraphicsPixmapItem
 -
 QGraphicsItem
@@ -55,15 +31,17 @@ QGraphicsSimpleTextItem
 -
 QKeyEvent
 -
-
-/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src2/main.cpp
-QApplication
+QTimer
 -
-SpaceInvaders.h
-/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src2/SpaceInvaders.h
-
-/mnt/c/Users/mpait/OneDrive/Bureau/COURS/CPP/Qt/QT_Project/src2/settings.h
-QSize
+QGraphicsScene
+-
+QPointer
+-
+QGraphicsView
+-
+QKeyEvent
+-
+QApplication
 -
 
 /usr/include/x86_64-linux-gnu/qt6/QtCore/QList
@@ -1657,6 +1635,10 @@ qgraphicsitem.h
 /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QGraphicsPixmapItem
 qgraphicsitem.h
 /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgraphicsitem.h
+
+/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QGraphicsScene
+qgraphicsscene.h
+/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qgraphicsscene.h
 
 /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QGraphicsSimpleTextItem
 qgraphicsitem.h

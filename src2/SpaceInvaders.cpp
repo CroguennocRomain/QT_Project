@@ -1,13 +1,15 @@
 #include "SpaceInvaders.h"
-#include <QTimer>
 
 SpaceInvaders::SpaceInvaders(QWidget* parent) : QGraphicsView(parent) {
     QGraphicsScene* pScene = new QGraphicsScene();
+
     setScene(pScene);
 
     pScene->setSceneRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 
-    setBackgroundBrush(QBrush(QImage("../img/SpaceInvadersBg.jpg").scaled(ScreenSize)));
+    this->background.load("../img/BackGround.jpg");
+    this->setSceneRect(0,0, background.width(), background.height());
+
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setCursor(Qt::PointingHandCursor);
@@ -16,31 +18,40 @@ SpaceInvaders::SpaceInvaders(QWidget* parent) : QGraphicsView(parent) {
     this->timer = new QTimer();
     connect(this->timer, SIGNAL(timeout()), this, SLOT(update()));
     this->timer->start(30);
+
+}
+
+void SpaceInvaders::drawBackground(QPainter *painter, const QRectF &rect) {
+    // Fonction du TP4 qui permet de dessiner l'image de fond
+    Q_UNUSED(rect);
+    painter->drawPixmap(QRectF(0,0,background.width(), background.height()), background, sceneRect());
 }
 
 void SpaceInvaders::run() {
     scene()->clear();
     setCursor(Qt::BlankCursor);
 
-    m_pCannon = new Cannon();
-    m_pCannon->setPos(SCREEN_WIDTH / 2, SCREEN_HEIGHT - EntitySize.height());
-    m_pCannon->setFlag(QGraphicsItem::ItemIsFocusable);
-    m_pCannon->setFocus();
-    scene()->addItem(m_pCannon);
+    myPlayer = new Player();
+    myPlayer->setPos( (SCREEN_WIDTH - EntitySize.width()) / 2 , 500 - (EntitySize.height()/2) ); //2800
+    // Permet de gérer les évènements clavier
+    myPlayer->setFlag(QGraphicsItem::ItemIsFocusable);
+    myPlayer->setFocus();
+    scene()->addItem(myPlayer);
 
-    connect(m_pCannon, &Cannon::sigIncreaseScore, this, &SpaceInvaders::onIncreaseScore);
-    connect(m_pCannon, &Cannon::sigDecreaseScore, this, &SpaceInvaders::onDecreaseScore);
+    connect(myPlayer, &Player::sigIncreaseScore, this, &SpaceInvaders::onIncreaseScore);
 
-    m_pPoints = new Points();
-    scene()->addItem(m_pPoints);
+    playerPoints = new Points();
+    scene()->addItem(playerPoints);
 
+    /*
     this->spawnTimer = new QTimer();
     connect(spawnTimer, &QTimer::timeout, this, &SpaceInvaders::onCreateEnemy);
     spawnTimer->start(2000);
+    */
 }
 void SpaceInvaders::checkPoints(){
-    if(m_pPoints->getScore() < 0 || m_pPoints->getHealth() <= 0){
-        m_pPoints->reset();
+    if(playerPoints->getScore() < 0 || playerPoints->getHealth() <= 0){
+        playerPoints->reset();
         onGameOver();
     }
 }
@@ -56,7 +67,7 @@ void SpaceInvaders::onCreateEnemy(){
     int nColor = rand() % 3;
 
     Alien* pAlien = new Alien(static_cast<Color>(nColor));
-    pAlien->setPos(nPos, 0);
+    pAlien->setPos(nPos, this->myPlayer->y() - 800);
 
     scene()->addItem(pAlien);
 
@@ -65,15 +76,12 @@ void SpaceInvaders::onCreateEnemy(){
 }
 
 void SpaceInvaders::onIncreaseScore(){
-    m_pPoints->increaseScore();
+    playerPoints->increaseScore(50);
     checkPoints();
 }
-void SpaceInvaders::onDecreaseScore(){
-    m_pPoints->decreaseScore();
-    checkPoints();
-}
+
 void SpaceInvaders::onDecreaseHealth(){
-    m_pPoints->decreaseHealth();
+    playerPoints->decreaseHealth();
     checkPoints();
 }
 void SpaceInvaders::onGameOver(){
@@ -81,28 +89,31 @@ void SpaceInvaders::onGameOver(){
 }
 
 void SpaceInvaders::update() {
-    /* On gère les déplacements du personnage dans le update pour plus de fluidité */
 
+    if (myPlayer != nullptr) {
+        QPointF target(myPlayer->x() + EntitySize.width() / 2, myPlayer->y() + EntitySize.height() / 2 - 300);
+        centerOn(target);
+    }
+
+    /* On gère les déplacements du vaisseau dans le update pour plus de fluidité */
     if (this->isMovingLeft) {
-        if (m_pCannon->x() > 0) {
-            m_pCannon->setPos(m_pCannon->x() - PlayerSpeed, m_pCannon->y());
+        if (myPlayer->x() > 0) {
+            myPlayer->setPos(myPlayer->x() - PlayerSpeed, myPlayer->y());
         }
     }
     else if (this->isMovingRight) {
-        if (m_pCannon->x() + EntitySize.width() < SCREEN_WIDTH) {
-            m_pCannon->setPos(m_pCannon->x() + PlayerSpeed, m_pCannon->y());
+        if (myPlayer->x() + EntitySize.width() < SCREEN_WIDTH) {
+            myPlayer->setPos(myPlayer->x() + PlayerSpeed, myPlayer->y());
         }
     }
 
-    if (this->isMovingUp) {
-        if (m_pCannon->y() > 0) {
-            m_pCannon->setPos(m_pCannon->x(), m_pCannon->y() - PlayerSpeed);
-        }
-    }
-    else if (this->isMovingDown) {
-        if (m_pCannon->y() + EntitySize.height() < SCREEN_HEIGHT) {
-            m_pCannon->setPos(m_pCannon->x(), m_pCannon->y() + PlayerSpeed);
-        }
+
+    myPlayer->setPos(myPlayer->x(), myPlayer->y() - m_Scrolling);
+    playerPoints->setPos(0, myPlayer->y()-675);
+
+    if(myPlayer->y() <= 400-m_Scrolling-(EntitySize.height()/2) + 300){ // MODIFIER POUR QU'IL N'Y AIT PAS DE TP
+        myPlayer->setPos(myPlayer->x(), myPlayer->y()+2400- 300);
+        //m_Scrolling = 0;
     }
 
 }
@@ -122,15 +133,6 @@ void SpaceInvaders::keyPressEvent(QKeyEvent* event) {
 
     /* Si le jeu n'est pas en pause on peut donc bouger */
     if (this->timer->isActive()) {
-        // Bouger en haut
-        if (event->key() == Qt::Key_Z) {
-            this->isMovingUp = true;
-        }
-
-        // Bouger en bas
-        if (event->key() == Qt::Key_S) {
-            this->isMovingDown = true;
-        }
 
         // Bouger à gauche
         if (event->key() == Qt::Key_Q) {
@@ -142,6 +144,10 @@ void SpaceInvaders::keyPressEvent(QKeyEvent* event) {
             this->isMovingRight = true;
         }
 
+        // Tirer
+        if (event->key() == Qt::Key_Space) {
+            myPlayer->shoot();
+        }
 
     }
 }
@@ -149,15 +155,6 @@ void SpaceInvaders::keyPressEvent(QKeyEvent* event) {
 void SpaceInvaders::keyReleaseEvent(QKeyEvent *event) {
     /* Si le jeu n'est pas en pause on peut donc bouger */
     if (this->timer->isActive()) {
-        // Bouger en haut
-        if (event->key() == Qt::Key_Z) {
-            this->isMovingUp = false;
-        }
-
-        // Bouger en bas
-        if (event->key() == Qt::Key_S) {
-            this->isMovingDown = false;
-        }
 
         // Bouger à gauche
         if (event->key() == Qt::Key_Q) {
@@ -169,9 +166,7 @@ void SpaceInvaders::keyReleaseEvent(QKeyEvent *event) {
             this->isMovingRight = false;
         }
 
-        if (event->key() == Qt::Key_Space) {
-            m_pCannon->shoot();
-        }
+
 
     }
 }
