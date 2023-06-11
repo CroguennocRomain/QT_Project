@@ -6,8 +6,7 @@ set(CMAKE_AUTOMOC ON)
 
 find_package(Qt6Widgets CONFIG REQUIRED)
 
-#file (GLOB_RECURSE Projet src/*.cpp src/*.h)
-file (GLOB_RECURSE Projet src2/*.cpp src2/*.h)
+file (GLOB_RECURSE Projet src/*.cpp src/*.h)
 
 add_executable(QT_Project ${Projet} )
 
