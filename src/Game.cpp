@@ -333,10 +333,29 @@ void Game::addDataToCSV(QString playerName, int score) {
     if (!file.open(QIODevice::Append | QIODevice::Text))
         return;
 
-    // On écrit les données dans le fichier
-    QTextStream out(&file);
-    out << playerName << "," << score << "\n";
+    std::string line;
+    std::vector<std::vector<std::string>> data; // Vecteur 2D pour stocker les données du CSV
+
+    while (std::getline(file, line)) {
+        std::stringstream ss(line);
+        std::string value;
+        std::vector<std::string> row; // Vecteur pour stocker les valeurs de chaque ligne
+
+        while (std::getline(ss, value, ',')) {
+            row.push_back(value);
+        }
+
+        data.push_back(row);
+    }
+
     file.close();
+
+    // Récupérer les informations de la ligne spécifique
+    const std::vector<std::string>& row = data[3 - 1];
+    for (const auto& value : row) {
+        std::cout << value << " ";
+    }
+    std::cout << std::endl;
 }
 
 /* <-__---__---__---__---__--- Slots ---__---__---__---__--- -> */
