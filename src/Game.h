@@ -43,7 +43,6 @@ class Scoreboard : public QGraphicsView {
 Q_OBJECT
 
 private:
-    QPixmap background;
     QTableWidget* tableWidget;
     QLabel* bestScoreLabel;
     QList<QPair<QString,int>> scoreList;
@@ -51,15 +50,8 @@ private:
 public:
 /* <-__---__---__---__---__--- Constructeur ---__---__---__---__--- -> */
     Scoreboard(QWidget* parent = nullptr);
-
-    void drawBackground(QPainter* painter, const QRectF& rect);
-    void takeData(int x);
 /* <-__---__---__---__---__--- Destructeur ---__---__---__---__--- -> */
     virtual ~Scoreboard();
-/* <-__---__---__---__---__--- Méthodes ---__---__---__---__--- -> */
-    void loadScore();
-
-
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -141,7 +133,6 @@ protected:
 public slots:
 /* <-__---__---__---__---__--- Slots ---__---__---__---__--- -> */
     void onCreateEnemy();
-    void onCreateAsteroid();
     void onIncreaseScore();
     void onDecreaseHealth();
     void onGameOver();

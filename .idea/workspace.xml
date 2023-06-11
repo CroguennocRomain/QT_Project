@@ -21,9 +21,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d52fe08f-01de-42b1-aac4-cb9240af25e9" name="Changes" comment="Précision de ce qui ne marche pas encore dans la classe Alien">
+    <list default="true" id="d52fe08f-01de-42b1-aac4-cb9240af25e9" name="Changes" comment="On peut remettre des données dans le csv">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/score.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/score.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.h" afterDir="false" />
     </list>
@@ -129,7 +128,7 @@
       <workItem from="1686422026935" duration="1654000" />
       <workItem from="1686480332066" duration="3497000" />
       <workItem from="1686492423068" duration="195000" />
-      <workItem from="1686498656839" duration="966000" />
+      <workItem from="1686498656839" duration="2327000" />
     </task>
     <task id="LOCAL-00001" summary="scoreboard">
       <created>1686408174260</created>
@@ -187,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686485170769</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="On peut remettre des données dans le csv">
+      <created>1686499866432</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1686499866432</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,6 +224,7 @@
     <MESSAGE value="Rename component.cpp/.h en Entity.cpp/.h" />
     <MESSAGE value="Ajouts de plus d'Aliens différents et commentaires" />
     <MESSAGE value="Précision de ce qui ne marche pas encore dans la classe Alien" />
-    <option name="LAST_COMMIT_MESSAGE" value="Précision de ce qui ne marche pas encore dans la classe Alien" />
+    <MESSAGE value="On peut remettre des données dans le csv" />
+    <option name="LAST_COMMIT_MESSAGE" value="On peut remettre des données dans le csv" />
   </component>
 </project>

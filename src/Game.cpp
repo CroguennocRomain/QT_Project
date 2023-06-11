@@ -50,6 +50,23 @@ QString ButtonPanel::getPlayerName() const {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /* #-------------------------------------------------------------#
+   #---# Structure Data #----------------------------------------#
+   #-------------------------------------------------------------# */
+// Permet de faciliter la comparaison des scores pour l'afficher dans le scoreboard
+struct Data {
+    QString name;
+    int score;
+};
+
+bool compareScores(const Data& data1, const Data& data2) {
+    return data1.score > data2.score;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/* #-------------------------------------------------------------#
    #---# Classe Scoreboard #-------------------------------------#
    #-------------------------------------------------------------# */
 
@@ -58,87 +75,76 @@ Scoreboard::Scoreboard(QWidget* parent) : QGraphicsView(parent) {
     /* <>---< Création de la scène >---<> */
     QGraphicsScene* pScene = new QGraphicsScene();
     setScene(pScene);
-    //donner un nom à la page
     setWindowTitle("Tableau de scores");
     pScene->setSceneRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-    //charger un background
-    this->background.load("../img/space-invader.jpg");
-    this->setSceneRect(0,0, background.width(), background.height());
 
-    //On créer un titre
+    /* <>---< Création du tableau >---<> */
     QWidget* centralWidget = new QWidget(this);
     QVBoxLayout* layout = new QVBoxLayout(centralWidget);
-    QLabel* titleLabel = new QLabel("Tableau de scores", this);
-    titleLabel->setAlignment(Qt::AlignCenter);
-    layout->addWidget(titleLabel);
 
-    //On créer un tableau
-
-    int row = 5;
-    int column = 1;
     QHBoxLayout* tableLayout = new QHBoxLayout();
     layout->addLayout(tableLayout);
+
     tableWidget = new QTableWidget(this);
-    tableWidget->setRowCount(row);
-    tableWidget->setColumnCount(column);
+    tableWidget->setRowCount(5);    // On veut afficher les 5 meilleurs scores
+    tableWidget->setColumnCount(2); // Deux colonnes pour le nom et le score
     tableWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
-    //On créer l'entete du tableau
     QStringList headerLabels;
-    headerLabels << "Score";
+    headerLabels << "Nom" << "Score"; // En-têtes des colonnes
     tableWidget->setHorizontalHeaderLabels(headerLabels);
+
+    QVector<Data> dataVec;
+    // Lire le fichier CSV et stocker les données dans le vecteur de Data
+    QFile file("../data/score.csv");
+    if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        QTextStream in(&file);
+        while (!in.atEnd()) {
+            QString line = in.readLine();
+            QStringList fields = line.split(",");
+            if (fields.size() == 2) {
+                Data data;
+                data.name = fields[0].trimmed();
+                data.score = fields[1].trimmed().toInt();
+                dataVec.append(data);
+            }
+        }
+        file.close();
+    } else {
+        qDebug() << "Erreur lors de l'ouverture du fichier.";
+    }
+
+    std::sort(dataVec.begin(), dataVec.end(), compareScores);
+
+    int bestScore = 0;
+
+    for (int row = 0; row < qMin(5, dataVec.size()); ++row) {
+        Data data = dataVec[row];
+        QTableWidgetItem* nameItem = new QTableWidgetItem(data.name);
+        QTableWidgetItem* scoreItem = new QTableWidgetItem(QString::number(data.score));
+        tableWidget->setItem(row, 0, nameItem); // Colonne du nom
+        tableWidget->setItem(row, 1, scoreItem); // Colonne du score
+
+        if (data.score > bestScore) {
+            bestScore = data.score;
+        }
+    }
+
     tableLayout->addStretch(1);
     tableLayout->addWidget(tableWidget);
     tableLayout->addStretch(1);
-    for (int i = 0; i < row; i++) {
-        takeData(i);
-    }
 
+    bestScoreLabel = new QLabel(this);
+    bestScoreLabel->setText("Meilleur score : " + QString::number(bestScore));
+    bestScoreLabel->setAlignment(Qt::AlignCenter);
+    tableWidget->resizeColumnsToContents();
+
+    layout->addWidget(bestScoreLabel);
 }
 
 /* <-__---__---__---__---__--- Destructeur ---__---__---__---__--- -> */
 Scoreboard::~Scoreboard() {
     delete this->tableWidget;
-}
-
-/* <-__---__---__---__---__--- Méthodes ---__---__---__---__--- -> */
-void Scoreboard::drawBackground(QPainter *painter, const QRectF &rect) {
-    // Fonction du TP4 qui permet de dessiner l'image de fond
-    Q_UNUSED(rect);
-    painter->drawPixmap(QRectF(0,0,background.width(), background.height()), background, sceneRect());
-}
-
-void Scoreboard::loadScore() {
-
-}
-
-void Scoreboard::takeData(int x) {
-    // On ouvre le fichier CSV
-    QFile file("../data/score.csv");
-    // On vérifie que le fichier est bien ouvert
-    if (!file.open(QIODevice::Append | QIODevice::Text))
-        return;
-
-    std::string line;
-    std::vector<std::vector<std::string>> data; // Vecteur 2D pour stocker les données du CSV
-    std::stringstream ss(line);
-    std::string value;
-    std::vector<std::string> row; // Vecteur pour stocker les valeurs de chaque ligne
-
-    while (std::getline(ss, value, ',')) {
-        row.push_back(value);
-    }
-
-    data.push_back(row);
-
-    file.close();
-
-    // Récupérer les informations de la ligne spécifique
-    const std::vector<std::string>& row2 = data[x - 1];
-    for (const auto& value : row2) {
-        std::cout << value << " ";
-    }
-    std::cout << std::endl;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -368,25 +374,6 @@ void Game::onCreateEnemy(){
         // On connecte l'alien aux conditions de défaite
         connect(pAlien, &Alien::sigDecreaseHealth, this, &Game::onDecreaseHealth);
         connect(pAlien, &Alien::sigGameOver, this, &Game::onGameOver);
-    }
-
-}
-
-void Game::onCreateAsteroid(){
-    if(!this->over) {
-        // On initialise de manière aléatoire la position latérale de l'asteroid
-        int nPos;
-        do {
-            nPos = (rand() % SCREEN_WIDTH);
-        } while (nPos < EntitySize.width() || nPos > SCREEN_WIDTH - EntitySize.width()); // On veut que l'asteroid soit dans l'écran
-        // Création de l'asteroid, sa position est en dehors de l'écran (au dessus)
-        Asteroid* pAsteroid = new Asteroid();
-        pAsteroid->setPos(nPos, this->myPlayer->y() - 700);
-        // On ajoute l'alien à la scene
-        scene()->addItem(pAsteroid);
-        // On connecte l'alien aux conditions de défaite
-        connect(pAsteroid, &Asteroid::sigDecreaseHealth, this, &Game::onDecreaseHealth);
-        connect(pAsteroid, &Asteroid::sigGameOver, this, &Game::onGameOver);
     }
 
 }
