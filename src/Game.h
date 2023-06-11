@@ -39,19 +39,15 @@ private:
    #---# Classe Scoreboard #-------------------------------------#
    #-------------------------------------------------------------# */
 
-class Scoreboard : public QGraphicsView {
+class Scoreboard : public QTableWidget {
 Q_OBJECT
 
 private:
-    QTableWidget* tableWidget;
-    QLabel* bestScoreLabel;
     QList<QPair<QString,int>> scoreList;
 
 public:
 /* <-__---__---__---__---__--- Constructeur ---__---__---__---__--- -> */
     Scoreboard(QWidget* parent = nullptr);
-/* <-__---__---__---__---__--- Destructeur ---__---__---__---__--- -> */
-    virtual ~Scoreboard();
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////

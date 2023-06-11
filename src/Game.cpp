@@ -71,29 +71,18 @@ bool compareScores(const Data& data1, const Data& data2) {
    #-------------------------------------------------------------# */
 
 /* <-__---__---__---__---__--- Constructeur ---__---__---__---__--- -> */
-Scoreboard::Scoreboard(QWidget* parent) : QGraphicsView(parent) {
-    /* <>---< Création de la scène >---<> */
-    QGraphicsScene* pScene = new QGraphicsScene();
-    setScene(pScene);
-    setWindowTitle("Tableau de scores");
-    pScene->setSceneRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-
-    /* <>---< Création du tableau >---<> */
-    QWidget* centralWidget = new QWidget(this);
-    QVBoxLayout* layout = new QVBoxLayout(centralWidget);
-
-    QHBoxLayout* tableLayout = new QHBoxLayout();
-    layout->addLayout(tableLayout);
-
-    tableWidget = new QTableWidget(this);
-    tableWidget->setRowCount(5);    // On veut afficher les 5 meilleurs scores
-    tableWidget->setColumnCount(2); // Deux colonnes pour le nom et le score
-    tableWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+Scoreboard::Scoreboard(QWidget* parent) : QTableWidget(parent) {
+    /* <>---< Paramétrage du tableau >---<> */
+    this->setFixedSize(380,320);
+    this->setRowCount(5);    // On veut afficher les 5 meilleurs scores
+    this->setColumnCount(2); // Deux colonnes pour le nom et le score
+    this->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
     QStringList headerLabels;
     headerLabels << "Nom" << "Score"; // En-têtes des colonnes
-    tableWidget->setHorizontalHeaderLabels(headerLabels);
+    this->setHorizontalHeaderLabels(headerLabels);
 
+    /* <>---< Remplissage du tableau >---<> */
     QVector<Data> dataVec;
     // Lire le fichier CSV et stocker les données dans le vecteur de Data
     QFile file("../data/score.csv");
@@ -116,35 +105,17 @@ Scoreboard::Scoreboard(QWidget* parent) : QGraphicsView(parent) {
 
     std::sort(dataVec.begin(), dataVec.end(), compareScores);
 
-    int bestScore = 0;
-
     for (int row = 0; row < qMin(5, dataVec.size()); ++row) {
         Data data = dataVec[row];
         QTableWidgetItem* nameItem = new QTableWidgetItem(data.name);
         QTableWidgetItem* scoreItem = new QTableWidgetItem(QString::number(data.score));
-        tableWidget->setItem(row, 0, nameItem); // Colonne du nom
-        tableWidget->setItem(row, 1, scoreItem); // Colonne du score
-
-        if (data.score > bestScore) {
-            bestScore = data.score;
-        }
+        this->setItem(row, 0, nameItem); // Colonne du nom
+        this->setItem(row, 1, scoreItem); // Colonne du score
     }
 
-    tableLayout->addStretch(1);
-    tableLayout->addWidget(tableWidget);
-    tableLayout->addStretch(1);
-
-    bestScoreLabel = new QLabel(this);
-    bestScoreLabel->setText("Meilleur score : " + QString::number(bestScore));
-    bestScoreLabel->setAlignment(Qt::AlignCenter);
-    tableWidget->resizeColumnsToContents();
-
-    layout->addWidget(bestScoreLabel);
-}
-
-/* <-__---__---__---__---__--- Destructeur ---__---__---__---__--- -> */
-Scoreboard::~Scoreboard() {
-    delete this->tableWidget;
+    // Définir la taille des colonnes pour qu'elles prennent toute la largeur du tableau
+    this->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    this->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
