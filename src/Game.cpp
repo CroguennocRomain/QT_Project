@@ -132,6 +132,35 @@ void Scoreboard::drawBackground(QPainter *painter, const QRectF &rect) {
     painter->drawPixmap(QRectF(0,0,background.width(), background.height()), background, sceneRect());
 }
 
+void Scoreboard::takeData() {
+    // On ouvre le fichier CSV
+    QFile file("../data/score.csv");
+    // On vérifie que le fichier est bien ouvert
+    if (!file.open(QIODevice::Append | QIODevice::Text))
+        return;
+
+    std::string line;
+    std::vector<std::vector<std::string>> data; // Vecteur 2D pour stocker les données du CSV
+    std::stringstream ss(line);
+    std::string value;
+    std::vector<std::string> row; // Vecteur pour stocker les valeurs de chaque ligne
+
+    while (std::getline(ss, value, ',')) {
+        row.push_back(value);
+    }
+
+    data.push_back(row);
+
+    file.close();
+
+    // Récupérer les informations de la ligne spécifique
+    const std::vector<std::string>& row2 = data[3 - 1];
+    for (const auto& value : row2) {
+        std::cout << value << " ";
+    }
+    std::cout << std::endl;
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -327,35 +356,7 @@ void Game::isOver(){
 
 /* <>---< Ajout de données dans le CSV >---<> */
 void Game::addDataToCSV(QString playerName, int score) {
-// On ouvre le fichier CSV
-    QFile file("../data/score.csv");
-    // On vérifie que le fichier est bien ouvert
-    if (!file.open(QIODevice::Append | QIODevice::Text))
-        return;
 
-    std::string line;
-    std::vector<std::vector<std::string>> data; // Vecteur 2D pour stocker les données du CSV
-
-    while (std::getline(file, line)) {
-        std::stringstream ss(line);
-        std::string value;
-        std::vector<std::string> row; // Vecteur pour stocker les valeurs de chaque ligne
-
-        while (std::getline(ss, value, ',')) {
-            row.push_back(value);
-        }
-
-        data.push_back(row);
-    }
-
-    file.close();
-
-    // Récupérer les informations de la ligne spécifique
-    const std::vector<std::string>& row = data[3 - 1];
-    for (const auto& value : row) {
-        std::cout << value << " ";
-    }
-    std::cout << std::endl;
 }
 
 /* <-__---__---__---__---__--- Slots ---__---__---__---__--- -> */
@@ -378,6 +379,25 @@ void Game::onCreateEnemy(){
         // On connecte l'alien aux conditions de défaite
         connect(pAlien, &Alien::sigDecreaseHealth, this, &Game::onDecreaseHealth);
         connect(pAlien, &Alien::sigGameOver, this, &Game::onGameOver);
+    }
+
+}
+
+void Game::onCreateAsteroid(){
+    if(!this->over) {
+        // On initialise de manière aléatoire la position latérale de l'asteroid
+        int nPos;
+        do {
+            nPos = (rand() % SCREEN_WIDTH);
+        } while (nPos < EntitySize.width() || nPos > SCREEN_WIDTH - EntitySize.width()); // On veut que l'asteroid soit dans l'écran
+        // Création de l'asteroid, sa position est en dehors de l'écran (au dessus)
+        Asteroid* pAsteroid = new Asteroid();
+        pAsteroid->setPos(nPos, this->myPlayer->y() - 700);
+        // On ajoute l'alien à la scene
+        scene()->addItem(pAsteroid);
+        // On connecte l'alien aux conditions de défaite
+        connect(pAsteroid, &Asteroid::sigDecreaseHealth, this, &Game::onDecreaseHealth);
+        connect(pAsteroid, &Asteroid::sigGameOver, this, &Game::onGameOver);
     }
 
 }

@@ -54,6 +54,7 @@ public:
     Scoreboard(QWidget* parent = nullptr);
 
     void drawBackground(QPainter* painter, const QRectF& rect);
+    void takeData();
     /* <-__---__---__---__---__--- Destructeur ---__---__---__---__--- -> */
     virtual ~Scoreboard();
 
@@ -138,6 +139,7 @@ protected:
 public slots:
 /* <-__---__---__---__---__--- Slots ---__---__---__---__--- -> */
     void onCreateEnemy();
+    void onCreateAsteroid();
     void onIncreaseScore();
     void onDecreaseHealth();
     void onGameOver();
