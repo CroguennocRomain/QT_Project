@@ -46,17 +46,19 @@ private:
     QPixmap background;
     QTableWidget* tableWidget;
     QLabel* bestScoreLabel;
+    QList<QPair<QString,int>> scoreList;
 
 public:
-
-
-    /* <-__---__---__---__---__--- Constructeur ---__---__---__---__--- -> */
+/* <-__---__---__---__---__--- Constructeur ---__---__---__---__--- -> */
     Scoreboard(QWidget* parent = nullptr);
 
     void drawBackground(QPainter* painter, const QRectF& rect);
     void takeData();
-    /* <-__---__---__---__---__--- Destructeur ---__---__---__---__--- -> */
+/* <-__---__---__---__---__--- Destructeur ---__---__---__---__--- -> */
     virtual ~Scoreboard();
+/* <-__---__---__---__---__--- Méthodes ---__---__---__---__--- -> */
+    void loadScore();
+
 
 };
 

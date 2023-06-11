@@ -21,51 +21,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d52fe08f-01de-42b1-aac4-cb9240af25e9" name="Changes" comment="Rename component.cpp/.h en Entity.cpp/.h">
-      <change afterPath="$PROJECT_DIR$/audio/Shoot-SoundEffect.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/AlienGreen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/AlienYellow.png" afterDir="false" />
+    <list default="true" id="d52fe08f-01de-42b1-aac4-cb9240af25e9" name="Changes" comment="Précision de ce qui ne marche pas encore dans la classe Alien">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/score.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/score.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/AlienBlue.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/AlienBlue.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/BlueBullet.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/BlueCannon.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/Cannon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/PinkBullet.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/Bullet.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/PinkCannon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/RedBullet.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/RedCannon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/SpaceInvadersBg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/alien_noir.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/ccsetup612.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/emoji_caca.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/espace.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/gameOver.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/interface-jeu-espace-pixel-envahisseurs-espace_1308-92135.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/invader.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/laser_alien.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/laser_player.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/mainLogo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/over.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/plane_blue.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/space-invader.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Alien.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Alien.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Character.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Character.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/projectile.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/projectile.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MainWindow.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MainWindow.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyScene.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyScene.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src2/Entity.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src2/Entity.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src2/Game.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src2/Game.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src2/main.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src2/settings.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/settings.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,8 +39,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN"
+  }
+}]]></component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="19a3d275-7da2-4bee-85c8-464d38a457fa" />
+        <option name="url" value="https://github.com/CroguennocRomain/QT_Project" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -128,11 +101,6 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="CMake Application.QT_Project" />
       <item itemvalue="CMake Application.QT_Project_autogen" />
@@ -159,7 +127,9 @@
       <workItem from="1686411211603" duration="6000" />
       <workItem from="1686421979351" duration="37000" />
       <workItem from="1686422026935" duration="1654000" />
-      <workItem from="1686480332066" duration="3335000" />
+      <workItem from="1686480332066" duration="3497000" />
+      <workItem from="1686492423068" duration="195000" />
+      <workItem from="1686498656839" duration="966000" />
     </task>
     <task id="LOCAL-00001" summary="scoreboard">
       <created>1686408174260</created>
@@ -203,7 +173,21 @@
       <option name="project" value="LOCAL" />
       <updated>1686422215689</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Ajouts de plus d'Aliens différents et commentaires">
+      <created>1686485098785</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1686485098785</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Précision de ce qui ne marche pas encore dans la classe Alien">
+      <created>1686485170769</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1686485170769</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,6 +216,8 @@
     <MESSAGE value="Ajout de l'écriture du CSV et d'un menu bar au menu principal" />
     <MESSAGE value="Rename des bouttons mainMenu" />
     <MESSAGE value="Rename component.cpp/.h en Entity.cpp/.h" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rename component.cpp/.h en Entity.cpp/.h" />
+    <MESSAGE value="Ajouts de plus d'Aliens différents et commentaires" />
+    <MESSAGE value="Précision de ce qui ne marche pas encore dans la classe Alien" />
+    <option name="LAST_COMMIT_MESSAGE" value="Précision de ce qui ne marche pas encore dans la classe Alien" />
   </component>
 </project>
