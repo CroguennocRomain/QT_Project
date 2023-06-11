@@ -3,6 +3,9 @@
 - [Romain CROGUENNOC] 
 - [Mathias PAITIER]
 
+## Pour compiler le projet :
+Sur Clion, il faut tout simplement appuyer sur le bouton Run en haut à droite de l'interface.
+
 ## Fonctionnalités
 ### Fonctionnalités implémentées :
 #### Dans le menu

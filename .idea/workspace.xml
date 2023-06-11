@@ -21,9 +21,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d52fe08f-01de-42b1-aac4-cb9240af25e9" name="Changes" comment="Classe Astéroïde non fonctionnelle">
+    <list default="true" id="d52fe08f-01de-42b1-aac4-cb9240af25e9" name="Changes" comment="Ajout du texte dans le README.md">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +126,8 @@
       <workItem from="1686422026935" duration="1654000" />
       <workItem from="1686480332066" duration="3497000" />
       <workItem from="1686492423068" duration="195000" />
-      <workItem from="1686498656839" duration="7981000" />
+      <workItem from="1686498656839" duration="8105000" />
+      <workItem from="1686507175350" duration="2000" />
     </task>
     <task id="LOCAL-00001" summary="scoreboard">
       <created>1686408174260</created>
@@ -220,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686505595256</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Ajout du texte dans le README.md">
+      <created>1686506920066</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1686506920066</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,6 +263,7 @@
     <MESSAGE value="Simplification de la classe Scoreboard" />
     <MESSAGE value="Commentaires classe Points" />
     <MESSAGE value="Classe Astéroïde non fonctionnelle" />
-    <option name="LAST_COMMIT_MESSAGE" value="Classe Astéroïde non fonctionnelle" />
+    <MESSAGE value="Ajout du texte dans le README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout du texte dans le README.md" />
   </component>
 </project>
