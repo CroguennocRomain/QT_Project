@@ -33,7 +33,7 @@ signals:
 /* #-------------------------------------------------------------#
    #---# Classe Alien #------------------------------------------#
    #-------------------------------------------------------------# */
-
+// TODO : Faire fonctionner les PVs et le score des Aliens
 class Alien : public QObject, public QGraphicsPixmapItem {
     Q_OBJECT
 
