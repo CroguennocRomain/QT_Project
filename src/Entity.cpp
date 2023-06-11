@@ -203,6 +203,11 @@ void Bullet::onMove()
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+/* #-------------------------------------------------------------#
+   #---# Classe Points #-----------------------------------------#
+   #-------------------------------------------------------------# */
+
+/* <-__---__---__---__---__--- Constructeur ---__---__---__---__--- -> */
 Points::Points(QGraphicsItem *parent) : QGraphicsTextItem(){
     this->m_nScore = 0;
     this->m_nHealth = MaxHealth;
@@ -213,6 +218,20 @@ Points::Points(QGraphicsItem *parent) : QGraphicsTextItem(){
     setFont(QFont("times", 24));
 }
 
+/* <-__---__---__---__---__--- Getters ---__---__---__---__--- -> */
+/* <>---< Gestion des points de score >---<> */
+int Points::getScore() const
+{
+    return m_nScore;
+}
+
+/* <>---< Gestion des points de vie >---<> */
+int Points::getHealth() const
+{
+    return m_nHealth;
+}
+
+/* <-__---__---__---__---__--- Setters ---__---__---__---__--- -> */
 void Points::increaseScore(int score)
 {
     m_nScore += score;
@@ -227,16 +246,7 @@ void Points::decreaseHealth()
                     + QString("Health: ") + QString::number(m_nHealth));
 }
 
-int Points::getScore() const
-{
-    return m_nScore;
-}
-
-int Points::getHealth() const
-{
-    return m_nHealth;
-}
-
+/* <-__---__---__---__---__--- Méthodes ---__---__---__---__--- -> */
 void Points::reset() {
     m_nScore = 0;
     m_nHealth = AlienSpeed;
