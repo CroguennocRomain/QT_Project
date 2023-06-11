@@ -62,22 +62,28 @@ Scoreboard::Scoreboard(QWidget* parent) : QGraphicsView(parent) {
     setWindowTitle("Tableau de scores");
     pScene->setSceneRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 
+    this->background.load("../img/space-invader.jpg");
+    this->setSceneRect(0,0, background.width(), background.height());
+
+    setWindowTitle("Tableau de scores");
+    setGeometry(100, 100, 400, 350);
 
     QWidget* centralWidget = new QWidget(this);
     //setCentralWidget(centralWidget);
 
     QVBoxLayout* layout = new QVBoxLayout(centralWidget);
 
+    QLabel* titleLabel = new QLabel("Tableau de scores", this);
+    titleLabel->setAlignment(Qt::AlignCenter);
+    layout->addWidget(titleLabel);
+
+    QHBoxLayout* tableLayout = new QHBoxLayout();
+    layout->addLayout(tableLayout);
+
     tableWidget = new QTableWidget(this);
     tableWidget->setRowCount(5);
     tableWidget->setColumnCount(1);
     tableWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-
-    layout->addWidget(tableWidget);
-    bestScoreLabel = new QLabel(this);
-    bestScoreLabel->setText("Meilleur score : 0");
-    bestScoreLabel->setAlignment(Qt::AlignCenter);
-    layout->addWidget(bestScoreLabel);
 
 
     QStringList headerLabels;
@@ -99,9 +105,20 @@ Scoreboard::Scoreboard(QWidget* parent) : QGraphicsView(parent) {
         }
     }
 
-    bestScoreLabel->setText("Meilleur score : " + QString::number(bestScore));
 
+
+
+    tableLayout->addStretch(1);
+    tableLayout->addWidget(tableWidget);
+    tableLayout->addStretch(1);
+
+    bestScoreLabel = new QLabel(this);
+    bestScoreLabel->setText("Meilleur score : 0");
+    bestScoreLabel->setAlignment(Qt::AlignCenter);
+    bestScoreLabel->setText("Meilleur score : " + QString::number(bestScore));
     tableWidget->resizeColumnsToContents();
+
+    layout->addWidget(bestScoreLabel);
 }
 
 /* <-__---__---__---__---__--- Destructeur ---__---__---__---__--- -> */

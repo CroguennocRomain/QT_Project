@@ -52,7 +52,7 @@ public:
 
     /* <-__---__---__---__---__--- Constructeur ---__---__---__---__--- -> */
     Scoreboard(QWidget* parent = nullptr);
-    void setupTable();
+
     void drawBackground(QPainter* painter, const QRectF& rect);
     /* <-__---__---__---__---__--- Destructeur ---__---__---__---__--- -> */
     virtual ~Scoreboard();
