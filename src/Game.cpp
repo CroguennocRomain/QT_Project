@@ -105,9 +105,6 @@ Scoreboard::Scoreboard(QWidget* parent) : QGraphicsView(parent) {
         }
     }
 
-
-
-
     tableLayout->addStretch(1);
     tableLayout->addWidget(tableWidget);
     tableLayout->addStretch(1);
@@ -126,10 +123,15 @@ Scoreboard::~Scoreboard() {
     delete this->tableWidget;
 }
 
+/* <-__---__---__---__---__--- Méthodes ---__---__---__---__--- -> */
 void Scoreboard::drawBackground(QPainter *painter, const QRectF &rect) {
     // Fonction du TP4 qui permet de dessiner l'image de fond
     Q_UNUSED(rect);
     painter->drawPixmap(QRectF(0,0,background.width(), background.height()), background, sceneRect());
+}
+
+void Scoreboard::loadScore() {
+
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -333,29 +335,10 @@ void Game::addDataToCSV(QString playerName, int score) {
     if (!file.open(QIODevice::Append | QIODevice::Text))
         return;
 
-    std::string line;
-    std::vector<std::vector<std::string>> data; // Vecteur 2D pour stocker les données du CSV
-
-    while (std::getline(file, line)) {
-        std::stringstream ss(line);
-        std::string value;
-        std::vector<std::string> row; // Vecteur pour stocker les valeurs de chaque ligne
-
-        while (std::getline(ss, value, ',')) {
-            row.push_back(value);
-        }
-
-        data.push_back(row);
-    }
-
+    // On écrit les données dans le fichier
+    QTextStream out(&file);
+    out << playerName << "," << score << "\n";
     file.close();
-
-    // Récupérer les informations de la ligne spécifique
-    const std::vector<std::string>& row = data[3 - 1];
-    for (const auto& value : row) {
-        std::cout << value << " ";
-    }
-    std::cout << std::endl;
 }
 
 /* <-__---__---__---__---__--- Slots ---__---__---__---__--- -> */
