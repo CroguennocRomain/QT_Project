@@ -53,7 +53,7 @@ public:
     Scoreboard(QWidget* parent = nullptr);
 
     void drawBackground(QPainter* painter, const QRectF& rect);
-    void takeData();
+    void takeData(int x);
 /* <-__---__---__---__---__--- Destructeur ---__---__---__---__--- -> */
     virtual ~Scoreboard();
 /* <-__---__---__---__---__--- Méthodes ---__---__---__---__--- -> */

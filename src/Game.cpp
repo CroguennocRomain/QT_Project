@@ -61,64 +61,39 @@ Scoreboard::Scoreboard(QWidget* parent) : QGraphicsView(parent) {
     //donner un nom à la page
     setWindowTitle("Tableau de scores");
     pScene->setSceneRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-
+    //charger un background
     this->background.load("../img/space-invader.jpg");
     this->setSceneRect(0,0, background.width(), background.height());
 
-    setWindowTitle("Tableau de scores");
-    setGeometry(100, 100, 400, 350);
-
+    //On créer un titre
     QWidget* centralWidget = new QWidget(this);
-    //setCentralWidget(centralWidget);
-
     QVBoxLayout* layout = new QVBoxLayout(centralWidget);
-
     QLabel* titleLabel = new QLabel("Tableau de scores", this);
     titleLabel->setAlignment(Qt::AlignCenter);
     layout->addWidget(titleLabel);
 
+    //On créer un tableau
+
+    int row = 5;
+    int column = 1;
     QHBoxLayout* tableLayout = new QHBoxLayout();
     layout->addLayout(tableLayout);
-
     tableWidget = new QTableWidget(this);
-    tableWidget->setRowCount(5);
-    tableWidget->setColumnCount(1);
+    tableWidget->setRowCount(row);
+    tableWidget->setColumnCount(column);
     tableWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
-
+    //On créer l'entete du tableau
     QStringList headerLabels;
     headerLabels << "Score";
     tableWidget->setHorizontalHeaderLabels(headerLabels);
-
-    QList<int> scores;
-    scores << 100 << 200 << 150 << 120 << 180;
-
-    int bestScore = 0;
-
-    for (int row = 0; row < scores.size(); ++row) {
-        int score = scores[row];
-        QTableWidgetItem* item = new QTableWidgetItem(QString::number(score));
-        tableWidget->setItem(row, 0, item);
-
-        if (score > bestScore) {
-            bestScore = score;
-        }
-    }
-
-
-
-
     tableLayout->addStretch(1);
     tableLayout->addWidget(tableWidget);
     tableLayout->addStretch(1);
+    for (int i = 0; i < row; i++) {
+        takeData(i);
+    }
 
-    bestScoreLabel = new QLabel(this);
-    bestScoreLabel->setText("Meilleur score : 0");
-    bestScoreLabel->setAlignment(Qt::AlignCenter);
-    bestScoreLabel->setText("Meilleur score : " + QString::number(bestScore));
-    tableWidget->resizeColumnsToContents();
-
-    layout->addWidget(bestScoreLabel);
 }
 
 /* <-__---__---__---__---__--- Destructeur ---__---__---__---__--- -> */
@@ -137,7 +112,7 @@ void Scoreboard::loadScore() {
 
 }
 
-void Scoreboard::takeData() {
+void Scoreboard::takeData(int x) {
     // On ouvre le fichier CSV
     QFile file("../data/score.csv");
     // On vérifie que le fichier est bien ouvert
@@ -159,7 +134,7 @@ void Scoreboard::takeData() {
     file.close();
 
     // Récupérer les informations de la ligne spécifique
-    const std::vector<std::string>& row2 = data[3 - 1];
+    const std::vector<std::string>& row2 = data[x - 1];
     for (const auto& value : row2) {
         std::cout << value << " ";
     }
