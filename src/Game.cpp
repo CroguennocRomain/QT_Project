@@ -298,8 +298,14 @@ void Game::run() {
 
     /* <>---< Création des aliens tous les "spawnSpacing" millisecondes >---<> */
     this->spawnTimer = new QTimer();
-    connect(spawnTimer, &QTimer::timeout, this, &Game::onCreateEnemy);
     spawnTimer->start(spawnSpacing);
+    connect(spawnTimer, &QTimer::timeout, this, &Game::onCreateEnemy);
+
+    /* <>---< Création des astéroides tous les "astSpacing" millisecondes >---<>
+    this->astTimer = new QTimer();
+    astTimer->start(astSpacing);
+    connect(astTimer, &QTimer::timeout, this, &Game::onCreateAst);
+    */
 }
 
 /* <>---< Gestion des évènements clavier >---<> */
@@ -347,6 +353,38 @@ void Game::onCreateEnemy(){
         connect(pAlien, &Alien::sigGameOver, this, &Game::onGameOver);
     }
 
+}
+
+void Game::onCreateAst() {
+
+    if(!this->over) {
+        // On initialise de manière aléatoire la position verticale de l'astéroïde
+        int nPos;
+        do {
+            nPos = (rand() % background.height());
+        } while (nPos < myPlayer->y() - 200 || nPos > myPlayer->y()-700 ); // On veut que l'astéroïde soit dans l'écran
+
+        // Génrération du côté de l'astéroïde
+        int nSide = rand() % 2;
+        // Création de l'astéroïde, sa position est en dehors de l'écran (à droite ou à gauche)
+        if(nSide == 0) { // Gauche
+            Asteroid *pAst = new Asteroid(false);
+            pAst->setPos(0, nPos);
+            // On ajoute l'astéroïde à la scene
+            scene()->addItem(pAst);
+
+            connect(pAst, &Asteroid::sigGameOver, this, &Game::onGameOver);
+            connect(pAst, &Asteroid::sigDecreaseHealth, this, &Game::onDecreaseHealth);
+        } else { // Droite
+            Asteroid *pAst = new Asteroid(true);
+            pAst->setPos(SCREEN_WIDTH, nPos);
+            // On ajoute l'astéroïde à la scene
+            scene()->addItem(pAst);
+
+            connect(pAst, &Asteroid::sigGameOver, this, &Game::onGameOver);
+            connect(pAst, &Asteroid::sigDecreaseHealth, this, &Game::onDecreaseHealth);
+        }
+    }
 }
 
 /* <>---< Gestion de l'augmentation du score >---<> */
@@ -400,6 +438,17 @@ void Game::update() {
         }
     }
 
+    /* <>---< Suppression de l'astéroïde si il sort de l'écran et diminution des PVs >---<> */
+    for (auto& item : scene()->items()) {
+        if (item->type() == Asteroid::Type) {
+            if (item->y() > myPlayer->y() + 100) {
+                scene()->removeItem(item);
+                emit static_cast<Asteroid*>(item)->sigDecreaseHealth();
+                delete item;
+            }
+        }
+    }
+
     /* <>---< Gestion des déplacements >---<> */
     // Déplacement à gauche
     if (this->isMovingLeft) {
@@ -424,6 +473,9 @@ void Game::update() {
         // Déplacer tous les aliens
         for (auto& item : scene()->items()) {
             if (item->type() == Alien::Type) {
+                item->setPos(item->x(), item->y() + 2400);
+            }
+            if (item->type() == Asteroid::Type) {
                 item->setPos(item->x(), item->y() + 2400);
             }
             else {

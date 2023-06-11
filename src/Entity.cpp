@@ -263,23 +263,52 @@ void Points::reset() {
    #-------------------------------------------------------------# */
 
 /* <-__---__---__---__---__--- Constructeur ---__---__---__---__--- -> */
-Asteroid::Asteroid() : QGraphicsPixmapItem(QPixmap("../img/Asteroid.png").scaled(EntitySize))
+Asteroid::Asteroid(bool sideLeft, QGraphicsItem* parent) : QGraphicsPixmapItem(parent)
 {
+    /* <>---< Gestion du sens >---<> */
+    setSideLeft(sideLeft);
+    if (isLeft) {
+        setPixmap(QPixmap("../img/AsteroidLeft").scaled(EntitySize));
+    } else {
+        setPixmap(QPixmap("../img/AsteroidRight").scaled(EntitySize));
+    }
+
     /* <>---< Gestion du déplacement >---<> */
     QTimer* pTimer = new QTimer(this);
     connect(pTimer, &QTimer::timeout, this, &Asteroid::onMove);
-    pTimer->start(AsteroidSpeed);
+    pTimer->start(50);
 }
 
-/* <-__---__---__---__---__--- Méthodes ---__---__---__---__--- -> */
+/* <-__---__---__---__---__--- Getters ---__---__---__---__--- -> */
+/* <>---< Gestion du sens >---<> */
+bool Asteroid::getSideLeft() const
+{
+    return isLeft;
+}
+
+/* <-__---__---__---__---__--- Setters ---__---__---__---__--- -> */
+/* <>---< Gestion du sens >---<> */
+void Asteroid::setSideLeft(bool sideLeft)
+{
+    isLeft = sideLeft;
+}
+
+
+/* <-__---__---__---__---__--- Slots ---__---__---__---__--- -> */
 /* <>---< Gestion du déplacement >---<> */
 void Asteroid::onMove()
 {
-    setPos(x(), y() + AsteroidSpeed);
+    std::cout << "Asteroid::onMove()" << std::endl;
+    /* <>---< Gestion du sens >---<> */
+    if (getSideLeft()) {
+        setPos(x() + AsteroidSpeed, y() + AsteroidSpeed);
+    } else {
+        setPos(x() - AsteroidSpeed, y() + AsteroidSpeed);
+    }
 
     /* <>---< Gestion de la collision avec le joueur >---<> */
     QList<QGraphicsItem*> lstCollidingItems = collidingItems();
-    /* Si l'Alien touche le joueur c'est la fin */
+    /* Si l'Astéroïde touche le joueur c'est la fin */
     for (auto const pItem : lstCollidingItems) {
         if (dynamic_cast<Player*>(pItem)) {
             emit sigGameOver();

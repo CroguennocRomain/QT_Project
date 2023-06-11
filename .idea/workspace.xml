@@ -21,8 +21,13 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d52fe08f-01de-42b1-aac4-cb9240af25e9" name="Changes" comment="Affichage des 5 meilleurs scores">
+    <list default="true" id="d52fe08f-01de-42b1-aac4-cb9240af25e9" name="Changes" comment="Commentaires classe Points">
+      <change afterPath="$PROJECT_DIR$/img/AsteroidLeft.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/AsteroidRight.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/score.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/score.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.h" afterDir="false" />
     </list>
@@ -84,8 +89,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\mpait\OneDrive\Bureau\COURS\CPP\Qt\QT_Project\audio" />
       <recent name="C:\Users\mpait\OneDrive\Bureau\COURS\CPP\Qt\QT_Project\img" />
+      <recent name="C:\Users\mpait\OneDrive\Bureau\COURS\CPP\Qt\QT_Project\audio" />
       <recent name="C:\Users\mpait\OneDrive\Bureau\COURS\CPP\Qt\QT_Project\data" />
     </key>
   </component>
@@ -128,7 +133,7 @@
       <workItem from="1686422026935" duration="1654000" />
       <workItem from="1686480332066" duration="3497000" />
       <workItem from="1686492423068" duration="195000" />
-      <workItem from="1686498656839" duration="3328000" />
+      <workItem from="1686498656839" duration="6525000" />
     </task>
     <task id="LOCAL-00001" summary="scoreboard">
       <created>1686408174260</created>
@@ -200,7 +205,21 @@
       <option name="project" value="LOCAL" />
       <updated>1686501078665</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Simplification de la classe Scoreboard">
+      <created>1686502299892</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1686502299892</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Commentaires classe Points">
+      <created>1686502450234</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1686502450234</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,6 +252,8 @@
     <MESSAGE value="Précision de ce qui ne marche pas encore dans la classe Alien" />
     <MESSAGE value="On peut remettre des données dans le csv" />
     <MESSAGE value="Affichage des 5 meilleurs scores" />
-    <option name="LAST_COMMIT_MESSAGE" value="Affichage des 5 meilleurs scores" />
+    <MESSAGE value="Simplification de la classe Scoreboard" />
+    <MESSAGE value="Commentaires classe Points" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commentaires classe Points" />
   </component>
 </project>

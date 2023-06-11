@@ -93,11 +93,13 @@ private:
     QTimer*       timer;
     int           m_Scrolling = ScrollingSpeed;
     int           spawnSpacing = 1500;
+    int           astSpacing = 1000;
     bool          over = false;
     QString       playerName;
 
 /* <>---< Gestion des ennemis >---<> */
     QTimer*       spawnTimer;
+    QTimer*       astTimer;
     QVector<bool> spaceSwpan = {false, false, false, false, false, false, false, false, false, false};
 
 /* <>---< Gestion des composants >---<> */
@@ -129,8 +131,11 @@ protected:
 public slots:
 /* <-__---__---__---__---__--- Slots ---__---__---__---__--- -> */
     void onCreateEnemy();
+    void onCreateAst();
+
     void onIncreaseScore();
     void onDecreaseHealth();
+
     void onGameOver();
 
     void update();

@@ -134,15 +134,21 @@ class Asteroid : public QObject, public QGraphicsPixmapItem {
     Q_OBJECT
 public:
 /* <-__---__---__---__---__--- Constructeur ---__---__---__---__--- -> */
-    Asteroid();
-/* <-__---__---__---__---__--- Méthodes ---__---__---__---__--- -> */
+    Asteroid(bool sideLeft = true, QGraphicsItem* parent = nullptr);
+/* <-__---__---__---__---__--- Getters & Setters ---__---__---__---__--- -> */
+    bool getSideLeft() const;
+    void setSideLeft(bool sideLeft);
 signals:
 /* <-__---__---__---__---__--- Signals ---__---__---__---__--- -> */
-    void sigDecreaseHealth();
     void sigGameOver();
+    void sigDecreaseHealth();
 
 public slots:
 /* <-__---__---__---__---__--- Slots ---__---__---__---__--- -> */
     void onMove();
+
+private:
+/* <-__---__---__---__---__--- Attributs ---__---__---__---__--- -> */
+    bool isLeft;
 };
 #endif //TEST_COMPONENT_H
