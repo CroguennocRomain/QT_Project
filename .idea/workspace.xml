@@ -23,6 +23,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d52fe08f-01de-42b1-aac4-cb9240af25e9" name="Changes" comment="Ajout du texte dans le README.md">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +128,8 @@
       <workItem from="1686480332066" duration="3497000" />
       <workItem from="1686492423068" duration="195000" />
       <workItem from="1686498656839" duration="8105000" />
-      <workItem from="1686507175350" duration="2000" />
+      <workItem from="1686507175350" duration="92000" />
+      <workItem from="1686580796925" duration="633000" />
     </task>
     <task id="LOCAL-00001" summary="scoreboard">
       <created>1686408174260</created>
@@ -227,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686506920066</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Ajout du texte dans le README.md">
+      <created>1686507257264</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1686507257264</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
